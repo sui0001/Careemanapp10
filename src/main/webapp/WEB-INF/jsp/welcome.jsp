@@ -1,3 +1,6 @@
+// トップページ
+// 新規登録画面へ遷移するボタンとログイン画面へ遷移するボタンを設置
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -12,7 +15,7 @@
 
 <body>
     <div class="container">
-	    <p class="fsize">やっほー</p>
+		<p class="fsize">Careemanappへようこそ</p>
 		<p class="regi"><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
 		<p class="login"><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
     </div>

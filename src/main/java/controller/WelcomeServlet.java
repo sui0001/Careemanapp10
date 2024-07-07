@@ -1,3 +1,5 @@
+//GETメソッド：トップページのwelcome.jspへフォワード
+
 package controller;
 
 import java.io.IOException;
@@ -9,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//①実行したときにindex.jspに処理を転送（フォワード）しているサーブレットクラス
 @WebServlet("/welcome")
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

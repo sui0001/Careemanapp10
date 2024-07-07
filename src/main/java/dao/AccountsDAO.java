@@ -16,7 +16,7 @@ public class AccountsDAO {
     private final String DB_PASS = "password";
 
 
-	// findByLoginメソッド
+	// findByLoginメソッド：ログインに使用されたアカウントの有無を確認するメソッド。LoginService.javaのexecuteメソッドで使用
 	public Accounts findByLogin(LoginDTO login) {
     	//変数のスコープの都合上、変数accontsをtryブロックの外で初期化する。
 		// 後でデータベースから取得したユーザー情報を格納するための変数
@@ -57,6 +57,7 @@ public class AccountsDAO {
         return accounts;
     }
     
+
 
 	// createメソッド
     public String create(Accounts newAccount) {

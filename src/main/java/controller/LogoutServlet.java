@@ -1,3 +1,5 @@
+// GETメソッド：ログアウト画面のlogout.jspへフォワード
+
 package controller;
 
 import java.io.IOException;

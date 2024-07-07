@@ -1,3 +1,10 @@
+// GETメソッド：ログイン画面のlogin.jspへフォワード
+// POSTメソッド：ログイン情報を取得し、DBに保存して結果をセッションスコープに保存し、メイン画面のmain.jspへフォワード
+
+/*
+ * TODO：セッションスコープにユーザーIDも保存する
+*/
+
 package controller;
 
 import java.io.IOException;
@@ -14,10 +21,13 @@ import domain.Accounts;
 import dto.LoginDTO;
 import service.LoginService;
 
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+
+    // GETメソッド：ログイン画面のlogin.jspへフォワード
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         // login.jspに処理を転送（フォワード）
@@ -25,6 +35,8 @@ public class LoginServlet extends HttpServlet {
         rd.forward(req, res);
     }
 
+
+    // POSTメソッド：ログイン情報を取得し、DBに保存して結果をセッションスコープに保存し、メイン画面のmain.jspへフォワード
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
@@ -51,10 +63,12 @@ public class LoginServlet extends HttpServlet {
         Accounts account = loginService.execute(login);
 
         if (account != null) {
+            // ログイン成功時の処理：セッションスコープにユーザー名を保存してメイン画面のmain.jspに遷移する
             session.setAttribute("userName", account.getName());
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
             rd.forward(req, res);
         } else {
+            // ログイン失敗時の処理：エラーメッセージをリクエストスコープに保存してログイン画面のlogin.jspに再度処理を戻す
             req.setAttribute("loginError", "メールアドレスまたはパスワード、もしくは両方が正しくありません。");
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             rd.forward(req, res);
