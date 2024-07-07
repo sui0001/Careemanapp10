@@ -1,5 +1,5 @@
-// トップページ
-// 新規登録画面へ遷移するボタンとログイン画面へ遷移するボタンを設置
+<%-- トップページ --%>
+<%-- 新規登録画面へ遷移するボタンとログイン画面へ遷移するボタンを設置 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
