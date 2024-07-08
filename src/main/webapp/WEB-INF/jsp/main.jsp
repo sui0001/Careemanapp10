@@ -4,14 +4,22 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>メイン画面</title>
+<link rel="stylesheet" type="text/css" href="/Careemanapp10/css/main.css">
+	<ul class="menu">
+		<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
+		<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
+		<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
+		<li><a href="/Careemanapp10/logout">ログアウト</a></li>
+	</ul>
 </head>
+
 <body>
-	<div class="logout">
-		<button onclick="location.href='/Careemanapp10/logout'">ログアウト</button>
-	</div>
+
 
 </body>
+
 </html>

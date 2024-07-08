@@ -1,6 +1,6 @@
 package dto;
 
-public class CompanyDetail {
+public class CompanyDetailDTO {
         private int company_detail_id; // 基本詳細ID：主キー
         // private int company_id; // 企業ID：外部キー
         private String management_status; // 経営状況
@@ -36,7 +36,7 @@ public class CompanyDetail {
         private int retirement_benefits; // 退職金
 
 
-        public CompanyDetail(int company_detail_id, String management_status, String business_content, String job_description, String work_location, String remote_work, String working_hours, int standard_working_hours, int break_time, int break_time_rule, int average_overtime_hours, int annual_holidays, String holiday_type, String paid_holidays, String other_holidays, String holiday_notes, int annual_salary, int monthly_salary, int basic_salary, int fixed_overtime_pay, int fixed_overtime_hours, int commuting_allowance, int housing_allowance, int qualification_support, int qualification_allowance, int other_allowances, int bonus, String bonus_record, String social_insurance, String probation_period, int probation_period_changes, int retirement_benefits) {
+        public CompanyDetailDTO(int company_detail_id, String management_status, String business_content, String job_description, String work_location, String remote_work, String working_hours, int standard_working_hours, int break_time, int break_time_rule, int average_overtime_hours, int annual_holidays, String holiday_type, String paid_holidays, String other_holidays, String holiday_notes, int annual_salary, int monthly_salary, int basic_salary, int fixed_overtime_pay, int fixed_overtime_hours, int commuting_allowance, int housing_allowance, int qualification_support, int qualification_allowance, int other_allowances, int bonus, String bonus_record, String social_insurance, String probation_period, int probation_period_changes, int retirement_benefits) {
             this.company_detail_id = company_detail_id;
             this.management_status = management_status;
             this.business_content = business_content;
