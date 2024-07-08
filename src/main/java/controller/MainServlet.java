@@ -1,9 +1,8 @@
 // GETメソッド：メイン画面のmain.jspに遷移する
 // POSTメソッド：ログイン情報を取得し、DBに保存して結果をセッションスコープに保存し、メイン画面のmain.jspへフォワード
 
-/*
- * TODO：セッションスコープにユーザーIDも保存する
-*/
+// TODO：セッションスコープにユーザーIDも保存する
+// ログアウト失敗時にlogin.jspへの戻り方を変更する (今はURLがmainのままになっているのでLoginと表示されるようにする) 
 
 
 package controller;
@@ -32,7 +31,6 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 
-		//フォワード。welcome.jsp(ここでいうトップページに処理が飛ぶ)
 		RequestDispatcher rs = req.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		rs.forward(req, res);
 	}

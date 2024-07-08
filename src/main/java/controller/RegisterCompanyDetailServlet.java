@@ -2,6 +2,7 @@
 // POSTメソッド：就労条件をDBに登録して企業単体ページのcompany.jspに遷移
 
 // TODO：POSTメソッドに就労条件をDB登録する処理を追加する
+// TODO：POSTメソッドのcompany.jspに遷移する処理をCompanyServlet.javaを介するようにする
 
 
 package controller;

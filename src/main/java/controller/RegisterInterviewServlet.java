@@ -2,6 +2,7 @@
 // POSTメソッド：
 
 // TODO：POSTメソッドに面接内容をDB登録する処理を追加する
+// TODO：POSTメソッドのcompany.jspに遷移する処理をCompanyServlet.javaを介するようにする
 
 package controller;
 

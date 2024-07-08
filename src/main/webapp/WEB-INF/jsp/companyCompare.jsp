@@ -8,14 +8,22 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>企業比較</title>
 </head>
+
 <body>
-    <h1>企業比較</h1>
+    <%-- ページタイトルを表示する --%>
+    <div class="title">
+        <p>企業比較</p>
+    </div>
 
     <%-- 企業比較テーブルの表示 --%>
-    // 企業比較用のテーブルを作成する
+    <div class="comCompareTable">
+        // 企業比較用のテーブルを作成する
+    </div>
 </body>
+
 </html>

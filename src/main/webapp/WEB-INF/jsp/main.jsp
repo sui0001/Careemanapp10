@@ -18,8 +18,27 @@
 </head>
 
 <body>
+	<%-- タイトルを表示する --%>
+	<div class="title">
+		<p>Careemanapp10</p>
+	</div>
 
+	<%-- ユーザー名を表示する --%>
+	<div class="welcome">
+		<p>ようこそ <%= session.getAttribute("username") %> さん</p>
+	</div>
 
+	<%-- 目標を表示する --%>
+	<div class="goal">
+		<p>目標</p>
+		<p>// ユーザーが登録した目標を表示するコードを記述</p>
+	</div>
+
+	<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
+	<div class="calendar">
+		<p>1週間</p>
+		<p>// カレンダーを表示するコードを記述</p>
+	</div>
 </body>
 
 </html>

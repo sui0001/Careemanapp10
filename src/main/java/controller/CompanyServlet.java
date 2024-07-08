@@ -24,8 +24,8 @@ public class CompanyServlet extends HttpServlet {
 	}
 
 
-	// POSTメソッド：
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+	// // POSTメソッド：
+	// protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// }
 
 }

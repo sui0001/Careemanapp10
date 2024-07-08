@@ -28,13 +28,10 @@ public class RegisterCompanyServlet extends HttpServlet {
 	}
 
 
-	// POSTメソッド：企業情報をDBに登録して、企業リスト画面のcompanyList.jspに遷移
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// 企業情報をDBに登録
-
-		// 企業リスト画面に遷移
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
-		rd.forward(req, res);
-	}
+	// // POSTメソッド：
+	// protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	// 	RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/registerCompany.jsp");
+	// 	rd.forward(req, res);
+	// }
 
 }
