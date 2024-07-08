@@ -14,7 +14,7 @@
 
 <body>
     <div class="container">
-	 <form action="/Careemanapp10/login" method="post">
+	 <form action="/Careemanapp10/main" method="post">
         <p class="fsize">ログイン画面</p>
 		<p>メールアドレス<br><input type="text" name="mail" placeholder="nekoneko29q@gmail.com"></p>
 		<p>パスワード<br><input type="password" name="pass" placeholder="パスワードを入力"></p>    

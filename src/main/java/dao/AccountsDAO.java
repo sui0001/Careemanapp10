@@ -13,7 +13,7 @@ public class AccountsDAO {
 
     private final String JDBC_URL = "jdbc:postgresql://localhost:5432/postgres";
     private final String DB_MAIL = "postgres";
-    private final String DB_PASS = "password";
+    private final String DB_PASS = "0322pyora";
 
 
 	// findByLoginメソッド：ログインに使用されたアカウントの有無を確認するメソッド。LoginService.javaのexecuteメソッドで使用
@@ -82,8 +82,7 @@ public class AccountsDAO {
 			}
 			// 一致したユーザーが存在しない場合
 			// エラーという文字列を返す
-		} catch (
-		SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			return "エラー";
 		}

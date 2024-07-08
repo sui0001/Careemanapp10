@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
 		String s_age =  request.getParameter("age");
 		//int age = Integer.parseInt(s_age);
 
-		int age;　// ここはいらないかも
+		int age;
 
 
 		if (!s_age.isEmpty()) {
