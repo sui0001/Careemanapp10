@@ -1,6 +1,6 @@
 <%-- 面接登録画面 --%>
 
-<%-- TODO：フォームの入力項目を追加する --%>
+<%-- TODO：面接内容基本の内容をチェックボックスに変更する --%>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,8 +21,13 @@
 
     <%-- 面接内容を登録 --%>
     <form action="/Careemanapp10/RegisterInterview" method="post">
-        // フォームの入力項目を追加する
-        <input type="submit" value="登録">
+        <p>面接日程：<input type="text" name="interview_date"></p>
+        <p>面接担当者：<input type="text" name="interviewer_name"></p>
+        <p>面接内容基本：<input type="text" name="interview_content_basic"></p>
+        <p>面接内容その他：<input type="text" name="interview_content_additional"></p>
+        <p>メモ：</p>
+        <textarea name="interview_memo" rows="4" cols="40"></textarea>
+        <p><input type="submit" value="登録"></p>
     </form>
 </body>
 

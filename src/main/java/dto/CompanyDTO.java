@@ -1,26 +1,25 @@
 package dto;
 
-import java.util.Date;
-
 public class CompanyDTO {
-    private int company_id; // 主キー
-    // private String userId; // 外部キー
-    private String company_name;
-    private String selection_application;
-    private String selection_status;
-    private Date selection_date;
-    private String selection_flow;
-    private String link_hp;
-    private String link_review;
-    private String selection_task;
-    private String selection_motivation;
-    private String positive_points;
-    private String negative_points;
-    private String points_to_confirm;
+	private String userId; // ユーザID
+	private int company_id; // 企業ID : 主キー
+	private String company_name; // 企業名
+	private String selection_application; // 応募媒体
+	private String selection_status; // 選考状況
+	private String selection_date; // 日程
+	private String selection_flow; // 選考フロー
+	private String link_hp; // HPリンク
+	private String link_review; // 口コミリンク
+	private String selection_task; // タスク内容
+	private String selection_motivation; // 志望動機
+	private String positive_points; // 良い点
+	private String negative_points; // 懸念点
+	private String points_to_confirm; // 確認事項
 
     
-    public CompanyDTO(int company_id, String company_name, String selection_application, String selection_status, Date selection_date, String selection_flow, String link_hp, String link_review, String selection_task, String selection_motivation, String positive_points, String negative_points, String points_to_confirm) {
-        this.company_id = company_id;
+    public CompanyDTO(String userId, int company_id, String company_name, String selection_application, String selection_status, String selection_date, String selection_flow, String link_hp, String link_review, String selection_task, String selection_motivation, String positive_points, String negative_points, String points_to_confirm) {
+        this.userId = userId;
+		this.company_id = company_id;
         this.company_name = company_name;
         this.selection_application = selection_application;
         this.selection_status = selection_status;
@@ -37,6 +36,14 @@ public class CompanyDTO {
 
     
     // GetterとSetter
+	public String getUser_id() {
+		return userId;
+	}
+
+	public void setUser_id(String userId) {
+		this.userId = userId;
+	}
+
 	public int getCompany_id() {
 		return company_id;
 	}
@@ -69,13 +76,12 @@ public class CompanyDTO {
 		this.selection_status = selection_status;
 	}
 
-	public Date getSelection_date() {
+	public String getSelection_date() {
 		return selection_date;
 	}
 
-	public void setSelection_date(Date selection_date) {
-		this.selection_date = selection_date;
-	}
+	public void setSelection_date(String selection_date) {
+		this.selection_date = selection_date;}
 
 	public String getSelection_flow() {
 		return selection_flow;

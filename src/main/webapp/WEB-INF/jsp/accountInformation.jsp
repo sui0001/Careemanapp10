@@ -21,7 +21,25 @@
 
     <%-- ユーザー情報を表示 --%>
     <div class="userInfoTable">
-        // ユーザー情報のテーブルを作成する
+        <table>
+            <tr>
+            <th>ユーザーID</th>
+            <td><%= request.getAttribute("userId") %></td>
+            </tr>
+            <tr>
+            <th>名前</th>
+            <td><%= request.getAttribute("name") %></td>
+            </tr>
+            <tr>
+            <th>年齢</th>
+            <td><%= request.getAttribute("age") %></td>
+            </tr>
+            <tr>
+            <th>メール</th>
+            <td><%= request.getAttribute("mail") %></td>
+            </tr>
+        </table>
+        </table>
     </div>
     
     <%-- ユーザー情報の更新画面へ遷移するボタン --%>

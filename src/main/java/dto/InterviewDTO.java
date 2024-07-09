@@ -1,19 +1,16 @@
 package dto;
 
-import java.util.Date;
-
 public class InterviewDTO {
-    private int interview_id; // 主キー
-    // private String userId; // 外部キー
-    private int company_id;
-    private Date interview_date;
-    private String interviewer_name;
-    private String interview_content_basic;
-    private String interview_content_additional;
-    private String interview_memo;
+	private int company_id; // 企業ID
+	private int interview_id; // 面接ID : 主キー
+	private String interview_date; // 面接日程
+	private String interviewer_name; // 面接担当者
+	private String interview_content_basic; // 面接内容基本
+	private String interview_content_additional; // 面接内容その他
+	private String interview_memo; // メモ
 
 
-    public InterviewDTO(int interview_id, int company_id, Date interview_date, String interviewer_name, String interview_content_basic, String interview_content_additional, String interview_memo) {
+    public InterviewDTO(int interview_id, int company_id, String interview_date, String interviewer_name, String interview_content_basic, String interview_content_additional, String interview_memo) {
         this.interview_id = interview_id;
         this.company_id = company_id;
         this.interview_date = interview_date;
@@ -45,12 +42,12 @@ public class InterviewDTO {
 	}
 
 
-	public Date getInterview_date() {
+	public String getInterview_date() {
 		return interview_date;
 	}
 
 
-	public void setInterview_date(Date interview_date) {
+	public void setInterview_date(String interview_date) {
 		this.interview_date = interview_date;
 	}
 
