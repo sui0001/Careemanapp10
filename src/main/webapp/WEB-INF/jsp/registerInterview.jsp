@@ -21,12 +21,20 @@
 
     <%-- 面接内容を登録 --%>
     <form action="/Careemanapp10/RegisterInterview" method="post">
-        <p>面接日程：<input type="text" name="interview_date"></p>
-        <p>面接担当者：<input type="text" name="interviewer_name"></p>
-        <p>面接内容基本：<input type="text" name="interview_content_basic"></p>
-        <p>面接内容その他：<input type="text" name="interview_content_additional"></p>
+        <p>面接日程：<input type="text" name="interview_date" pattern="\d{2}/\d{2}" placeholder="mm/dd"></p>
+        <p>面接担当者：<input type="text" name="interviewer_name" placeholder="採用担当・部長・役員など"></p>
+        <p>面接内容基本：</p>
+        <input type="checkbox" name="interview_content_basic" value="自己紹介">自己紹介<br>
+        <input type="checkbox" name="interview_content_basic" value="前職の内容">前職の内容<br>
+        <input type="checkbox" name="interview_content_basic" value="力を入れたこと">力を入れたこと<br>
+        <input type="checkbox" name="interview_content_basic" value="苦労した経験">苦労した経験<br>
+        <input type="checkbox" name="interview_content_basic" value="退職理由">退職理由<br>
+        <input type="checkbox" name="interview_content_basic" value="志望理由 (業界・職種)">志望理由 (業界・職種)<br>
+        <input type="checkbox" name="interview_content_basic" value="志望動機 (企業)">志望動機 (企業)<br>
+        <p>面接内容その他：</p>
+        <textarea name="interview_content_additional" rows="6" cols="60"></textarea>
         <p>メモ：</p>
-        <textarea name="interview_memo" rows="4" cols="40"></textarea>
+        <textarea name="interview_memo" rows="4" cols="60"></textarea>
         <p><input type="submit" value="登録"></p>
     </form>
 </body>
