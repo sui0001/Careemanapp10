@@ -151,5 +151,10 @@ public class CompanyDTO {
 		this.points_to_confirm = points_to_confirm;
 	}
 
+    public void add(CompanyDTO company) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
+
     
 }

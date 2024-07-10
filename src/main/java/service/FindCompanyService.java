@@ -1,12 +1,14 @@
 package service;
 
+import java.util.List;
+
 import dao.CompanyDAO;
 import dto.CompanyDTO;
 
 public class FindCompanyService {
-    public CompanyDTO execute(CompanyDTO findCompany) {
+    public List<CompanyDTO> execute(CompanyDTO findCompany) {
         CompanyDAO dao = new CompanyDAO();
-        CompanyDTO company = dao.findByCompany(findCompany);
-        return company;  // アカウント情報を直接返す
+        List<CompanyDTO> companies = dao.findByCompany(findCompany);
+        return companies;  // 企業情報を直接返す
     }
 }

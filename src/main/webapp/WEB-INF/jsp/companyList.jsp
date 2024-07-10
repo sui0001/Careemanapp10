@@ -7,8 +7,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="dto.*" %>
+<%@ page import="java.util.List" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<% CompanyDTO requestCompanyList =  (CompanyDTO)request.getAttribute("company"); %>
+<% List<CompanyDTO> requestCompanyList =  (List<CompanyDTO>)request.getAttribute("companies"); %>
 
 <!DOCTYPE html>
 <html>
@@ -50,22 +51,25 @@
             <th>懸念点</th>
             <th>確認事項</th>
             </tr>
+
+            <% for (CompanyDTO company : requestCompanyList) { %>
             <tr>
-            <%-- <td><%= requestCompanyList.getUser_id() %></td> --%>
-            <%-- <td><%= requestCompanyList.getCompany_id() %></td> --%>
-            <td><a href="/Careemanapp10/Company"><%= requestCompanyList.getCompany_name() %></a></td>
-            <td><%= requestCompanyList.getSelection_application() %></td>
-            <td><%= requestCompanyList.getSelection_status() %></td>
-            <td><%= requestCompanyList.getSelection_date() %></td>
-            <td><%= requestCompanyList.getSelection_flow() %></td>
-            <td><%= requestCompanyList.getLink_hp() %></td>
-            <td><%= requestCompanyList.getLink_review() %></td>
-            <td><%= requestCompanyList.getSelection_task() %></td>
-            <td><%= requestCompanyList.getSelection_motivation() %></td>
-            <td><%= requestCompanyList.getPositive_points() %></td>
-            <td><%= requestCompanyList.getNegative_points() %></td>
-            <td><%= requestCompanyList.getPoints_to_confirm() %></td>
+                <%-- <td><%= requestCompanyList.getUser_id() %></td> --%>
+                <%-- <td><%= requestCompanyList.getCompany_id() %></td> --%>
+                <td><a href="/Careemanapp10/Company"><%= company.getCompany_name() %></a></td>
+                <td><%= company.getSelection_application() %></td>
+                <td><%= company.getSelection_status() %></td>
+                <td><%= company.getSelection_date() %></td>
+                <td><%= company.getSelection_flow() %></td>
+                <td><%= company.getLink_hp() %></td>
+                <td><%= company.getLink_review() %></td>
+                <td><%= company.getSelection_task() %></td>
+                <td><%= company.getSelection_motivation() %></td>
+                <td><%= company.getPositive_points() %></td>
+                <td><%= company.getNegative_points() %></td>
+                <td><%= company.getPoints_to_confirm() %></td>
             </tr>
+            <% } %>
         </table>
     </div>
 

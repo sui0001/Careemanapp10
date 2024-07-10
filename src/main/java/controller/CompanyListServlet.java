@@ -7,6 +7,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,11 +42,11 @@ public class CompanyListServlet extends HttpServlet {
 					null, null, null, null, null,
 						null, null, null, null);
 			FindCompanyService findcompanyService = new FindCompanyService();
-			CompanyDTO company = findcompanyService.execute(findCompany);
-			System.out.println(company);
+			List<CompanyDTO> companies = findcompanyService.execute(findCompany);
+			System.out.println(companies);
 			
 			// 企業情報をリクエストスコープに保存
-			req.setAttribute("company", company);
+			req.setAttribute("companies", companies);
 		
 		// 企業リスト画面に遷移
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
@@ -94,10 +95,6 @@ public class CompanyListServlet extends HttpServlet {
 
 		// doGetメソッドを呼び出す
 		doGet(req, res);
-
-		// // 企業リスト画面に遷移
-		// RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
-		// rd.forward(req, res);
 	}
 
 }
