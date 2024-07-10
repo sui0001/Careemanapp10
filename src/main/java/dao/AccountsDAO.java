@@ -39,14 +39,14 @@ public class AccountsDAO {
             
             if (rs.next()) {
                 // 結果からデータを取得
-                String userId = rs.getString("user_id");
+                String user_id = rs.getString("user_id");
                 String pass = rs.getString("pass");
                 String mail = rs.getString("mail");
                 String name = rs.getString("name");
                 int age = rs.getInt("age");
 
              // 一致したユーザーが存在した場合、そのユーザーを表すAccountsインスタンスを生成
-                accounts = new Accounts(userId, pass, mail, name, age);
+                accounts = new Accounts(user_id, pass, mail, name, age);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class AccountsDAO {
     
 
 
-	// createメソッド
+	// createメソッド：新規登録するメソッド
     public String create(Accounts newAccount) {
 
 		// データベースへ接続
@@ -93,7 +93,7 @@ public class AccountsDAO {
 			String sql = "INSERT INTO accounts(user_id, pass, mail, name, age) VALUES(?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// INSERT文中の「?」に使用する値を設定しSQLを完成
-			pStmt.setString(1, newAccount.getUserId());
+			pStmt.setString(1, newAccount.getUser_id());
 			pStmt.setString(2, newAccount.getPass());
 			pStmt.setString(3, newAccount.getMail());
 			pStmt.setString(4, newAccount.getName());

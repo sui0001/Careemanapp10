@@ -64,6 +64,7 @@ public class MainServlet extends HttpServlet {
 
         if (account != null) {
             // ログイン成功時の処理：セッションスコープにユーザー名を保存してメイン画面のmain.jspに遷移する
+            session.setAttribute("user_id", account.getUser_id());
             session.setAttribute("userName", account.getName());
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
             rd.forward(req, res);

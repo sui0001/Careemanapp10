@@ -1,7 +1,7 @@
 package dto;
 
 public class CompanyDTO {
-	private String userId; // ユーザID
+	private String user_id; // ユーザID
 	private int company_id; // 企業ID : 主キー
 	private String company_name; // 企業名
 	private String selection_application; // 応募媒体
@@ -17,8 +17,8 @@ public class CompanyDTO {
 	private String points_to_confirm; // 確認事項
 
     
-    public CompanyDTO(String userId, int company_id, String company_name, String selection_application, String selection_status, String selection_date, String selection_flow, String link_hp, String link_review, String selection_task, String selection_motivation, String positive_points, String negative_points, String points_to_confirm) {
-        this.userId = userId;
+    public CompanyDTO(String user_id, int company_id, String company_name, String selection_application, String selection_status, String selection_date, String selection_flow, String link_hp, String link_review, String selection_task, String selection_motivation, String positive_points, String negative_points, String points_to_confirm) {
+        this.user_id = user_id;
 		this.company_id = company_id;
         this.company_name = company_name;
         this.selection_application = selection_application;
@@ -37,11 +37,11 @@ public class CompanyDTO {
     
     // GetterとSetter
 	public String getUser_id() {
-		return userId;
+		return user_id;
 	}
 
-	public void setUser_id(String userId) {
-		this.userId = userId;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public int getCompany_id() {

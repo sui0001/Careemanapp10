@@ -54,13 +54,13 @@
         <p>HPリンク：<input type="text" name="link_hp" placeholder="リンクを入力してください"></p>
         <p>口コミリンク：<input type="text" name="link_review" placeholder="リンクを入力してください"></p>
         <p>タスク：</p>
-        <input type="checkbox" name="selection_task" value="返信"> 返信<br>
-        <input type="checkbox" name="selection_task" value="日程調整"> 日程調整<br>
-        <input type="checkbox" name="selection_task" value="書類送付"> 書類送付<br>
-        <input type="checkbox" name="selection_task" value="テスト受験"> テスト受験<br>
-        <input type="checkbox" name="selection_task" value="完了報告 (エージェント)"> 完了報告 (エージェント)<br>
-        <input type="checkbox" name="selection_task" value="面接後アンケート (エージェント)"> 面接後アンケート (エージェント)<br>
-        <input type="checkbox" name="selection_task" value="その他"> その他<br>
+        <input type="checkbox" name="selection_tasks" value="返信"> 返信<br>
+        <input type="checkbox" name="selection_tasks" value="日程調整"> 日程調整<br>
+        <input type="checkbox" name="selection_tasks" value="書類送付"> 書類送付<br>
+        <input type="checkbox" name="selection_tasks" value="テスト受験"> テスト受験<br>
+        <input type="checkbox" name="selection_tasks" value="完了報告 (エージェント)"> 完了報告 (エージェント)<br>
+        <input type="checkbox" name="selection_tasks" value="面接後アンケート (エージェント)"> 面接後アンケート (エージェント)<br>
+        <input type="checkbox" name="selection_tasks" value="その他"> その他<br>
         <p>志望動機：</p>
         <textarea name="selection_motivation" rows="5" cols="60"></textarea>
         <p>良い点：</p>

@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 	    // 新規ユーザー情報を取得
-		String userId =  (String) request.getParameter("id");
+		String user_id =  (String) request.getParameter("id");
 		String password =  (String) request.getParameter("pass");
 		String mail =  (String) request.getParameter("mail");
 		String name =  (String) request.getParameter("name");
@@ -45,8 +45,6 @@ public class RegisterServlet extends HttpServlet {
 		//int age = Integer.parseInt(s_age);
 
 		int age;
-
-
 		if (!s_age.isEmpty()) {
 			age = Integer.parseInt(s_age);
 		} else {
@@ -55,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 		}
 
 	    //新規ユーザー情報をAccountインスタンスに保存
-		Accounts newAccount = new Accounts(userId, password, mail, name, age);
+		Accounts newAccount = new Accounts(user_id, password, mail, name, age);
 		request.setAttribute("newAccount", newAccount);
 
 	    //DBに保存

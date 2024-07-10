@@ -24,7 +24,7 @@
         <table>
             <tr>
             <th>ユーザーID</th>
-            <td><%= request.getAttribute("userId") %></td>
+            <td><%= request.getAttribute("user_id") %></td>
             </tr>
             <tr>
             <th>名前</th>
