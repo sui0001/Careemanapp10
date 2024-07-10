@@ -19,6 +19,12 @@ public class CompanyServlet extends HttpServlet {
 
 	// GETメソッド：企業単体ページのcompany.jspに遷移
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		// 選択した企業情報を取得
+
+		// 企業情報をリクエストスコープに保存
+		
+		
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/company.jsp");
 		rd.forward(req, res);
 	}

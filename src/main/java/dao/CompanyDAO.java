@@ -39,7 +39,7 @@ public class CompanyDAO {
 
             
             if (rs.next()) {
-                // 結果からデータを取得 (for文かwhile文で取得)
+                // 結果からデータを取得
                 String user_id = rs.getString("user_id");
                 int company_id = rs.getInt("company_id");
                 String company_name = rs.getString("company_name");
@@ -57,9 +57,10 @@ public class CompanyDAO {
 
 
                 // 一致したデータを表すCompanyDTOインスタンスを生成
-                company = new CompanyDTO(user_id, company_id, company_name, selection_application,
-                    selection_status, selection_date, selection_flow, link_hp, link_review,
-                        selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
+                company =
+                    new CompanyDTO(user_id, company_id, company_name, selection_application,
+                        selection_status, selection_date, selection_flow, link_hp, link_review,
+                            selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
             }
         
         }catch (SQLException e) {

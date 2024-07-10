@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dto.CompanyDTO;
+import service.FindCompanyService;
 import service.PostCompanyService;
 
 
@@ -26,6 +27,27 @@ public class CompanyListServlet extends HttpServlet {
 
 	// GETメソッド：企業リスト画面を表示
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		// DBからuser_idを基に企業情報を取得
+			
+			// セッションスコープからの取得
+			HttpSession session = req.getSession();
+			// ユーザIDを取得
+			String user_id = (String) session.getAttribute("user_id");
+			
+			// ユーザIDを基に企業情報を取得
+			CompanyDTO findCompany =
+				new CompanyDTO(user_id, 0, null, null,null,
+					null, null, null, null, null,
+						null, null, null, null);
+			FindCompanyService findcompanyService = new FindCompanyService();
+			CompanyDTO company = findcompanyService.execute(findCompany);
+			System.out.println(company);
+			
+			// 企業情報をリクエストスコープに保存
+			req.setAttribute("company", company);
+		
+		// 企業リスト画面に遷移
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
 		rd.forward(req, res);
 	}
@@ -57,7 +79,7 @@ public class CompanyListServlet extends HttpServlet {
 		String negative_points = req.getParameter("negative_points");
 		String points_to_confirm = req.getParameter("points_to_confirm");
 
-	    //新規ユーザー情報をAccountインスタンスに保存
+	    //企業情報をCompanyDTOインスタンスに保存
 		CompanyDTO newCompany =
 			new CompanyDTO(user_id, company_id, company_name, selection_application, selection_status, selection_date, selection_flow,
 				link_hp, link_review, selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
@@ -70,9 +92,12 @@ public class CompanyListServlet extends HttpServlet {
 	    //登録結果をリクエストスコープに保存
 		req.setAttribute("msg", msg);
 
-		// 企業リスト画面に遷移
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
-		rd.forward(req, res);
+		// doGetメソッドを呼び出す
+		doGet(req, res);
+
+		// // 企業リスト画面に遷移
+		// RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");
+		// rd.forward(req, res);
 	}
 
 }

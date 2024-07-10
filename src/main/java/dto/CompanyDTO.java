@@ -34,6 +34,10 @@ public class CompanyDTO {
         this.points_to_confirm = points_to_confirm;
     }
 
+	public CompanyDTO(String user_id) {
+		this.user_id = user_id;
+	}
+	
     
     // GetterとSetter
 	public String getUser_id() {
