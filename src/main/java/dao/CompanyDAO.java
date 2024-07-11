@@ -78,6 +78,7 @@ public class CompanyDAO {
     }
 
 
+
     // 企業検索メソッド：company_idを元に企業情報を取得して出力する
     public CompanyDTO findSingleCompany(CompanyDTO findSingleCompany){
 
@@ -133,6 +134,7 @@ public class CompanyDAO {
     }
 
 
+
     // 企業登録用のメソッド：企業を登録する (ユーザーIDはセッションスコープから取り出して登録)
     public String createCompany(CompanyDTO newCompany){
 
@@ -140,11 +142,12 @@ public class CompanyDAO {
 		try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
 
 			// SELECT文を準備
-			String sql = "SELECT * FROM companies WHERE company_name = ?";
+			String sql = "SELECT * FROM companies WHERE company_name = ? AND user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
             // 1番目のプレースホルダに値をセット
             pStmt.setString(1, newCompany.getCompany_name());
+            pStmt.setString(2, newCompany.getUser_id());
 
 			// SELECTを実行し、結果表を取得
 			ResultSet rs = pStmt.executeQuery();

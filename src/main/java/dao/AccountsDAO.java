@@ -1,3 +1,9 @@
+// findByLoginメソッド：ログインに使用されたアカウントの有無を確認するメソッド。LoginService.javaのexecuteメソッドで使用
+// findByAccountメソッド：ユーザー情報を取得するメソッド (ユーザー情報画面に遷移する際に使用)
+// createメソッド：新規登録するメソッド
+
+
+
 package dao;
 
 import java.sql.Connection;
@@ -56,7 +62,8 @@ public class AccountsDAO {
         // DBにユーザー情報があればユーザー情報が入った変数accountsを返す。なければnullを返すcatchブロックの中のreturn文
         return accounts;
     }
-    
+
+
 
 	// findByAccountメソッド：ユーザー情報を取得するメソッド
 	public Accounts findByAccount(Accounts findAccount) {
@@ -68,7 +75,7 @@ public class AccountsDAO {
 		try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
 
 			// SELECT文を準備
-			String sql = "SELECT user_id, pass, mail, name, age FROM accounts WHERE user_id = ?";
+			String sql = "SELECT * FROM accounts WHERE user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// 1番目のプレースホルダにuser_idをセット
 			pStmt.setString(1, findAccount.getUser_id());
@@ -84,9 +91,12 @@ public class AccountsDAO {
 				String mail = rs.getString("mail");
 				String name = rs.getString("name");
 				int age = rs.getInt("age");
+				String goal = rs.getString("goal");
+				String link_resume = rs.getString("link_resume");
+				String link_work_history = rs.getString("link_work_history");
 
 				// 一致したユーザーが存在した場合、そのユーザーを表すAccountsインスタンスを生成
-				accounts = new Accounts(user_id, pass, mail, name, age);
+				accounts = new Accounts(user_id, pass, mail, name, age, goal, link_resume, link_work_history);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -96,6 +106,8 @@ public class AccountsDAO {
 		// DBにユーザー情報があればユーザー情報が入った変数accountsを返す。なければnullを返すcatchブロックの中のreturn文
 		return accounts;
 	}
+
+
 
 	// createメソッド：新規登録するメソッド
     public String create(Accounts newAccount) {
@@ -128,7 +140,7 @@ public class AccountsDAO {
 		try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
 
 			// INSERT文を準備
-			String sql = "INSERT INTO accounts(user_id, pass, mail, name, age) VALUES(?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO accounts(user_id, pass, mail, name, age, goal, link_resume, link_work_history) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// INSERT文中の「?」に使用する値を設定しSQLを完成
 			pStmt.setString(1, newAccount.getUser_id());
@@ -136,6 +148,9 @@ public class AccountsDAO {
 			pStmt.setString(3, newAccount.getMail());
 			pStmt.setString(4, newAccount.getName());
 			pStmt.setInt(5, newAccount.getAge());
+			pStmt.setString(6, newAccount.getGoal());
+			pStmt.setString(7, newAccount.getLink_resume());
+			pStmt.setString(8, newAccount.getLink_work_history());
 			
 			// INSERT文を実行
 			int result = pStmt.executeUpdate();

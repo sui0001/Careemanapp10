@@ -19,7 +19,7 @@
 	<h2>新規登録</h2>
 	<form action="register" method="post">
 		<p>ユーザーID<br>
-			<input type="text" name="id" placeholder="数字を入力">
+			<input type="text" name="user_id" placeholder="数字を入力">
 		</p>
 		
 		<p>パスワード<br>
@@ -37,6 +37,18 @@
 		<p>年齢<br>
 			<input type="number" name="age" placeholder="数字を入力">
 		</p>
+
+		<p>目標<br>
+			<input type="text" name="goal" placeholder="目標を入力">
+		</p>
+
+		<p>履歴書<br>
+			<input type="text" name="link_resume" placeholder="履歴書のリンクを入力">
+		</p>
+
+		<p>職務経歴書<br>
+			<input type="text" name="link_work_history" placeholder="職務経歴書のリンクを入力">
+		</p>
 		
 		<input type="submit" value="登録">
 	</form>
@@ -45,4 +57,5 @@
     
     </div>
 </body>
+
 </html>

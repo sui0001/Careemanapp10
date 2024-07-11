@@ -1,4 +1,4 @@
-// GETメソッド：ユーザー情報画面のAccountinformation.jspに遷移する
+////// GETメソッド：ユーザー情報画面のAccountinformation.jspに遷移する
 // POSTメソッド：ユーザー情報のDB更新を行い、ユーザー情報画面のaccountinformation.jspに遷移する
 
 //TODO：ユーザー情報更新を行う処理を追加する
@@ -33,7 +33,7 @@ public class AccountInformationServlet extends HttpServlet {
 
 			// ユーザIDを基にユーザー情報を取得
 			Accounts findAccount =
-				new Accounts(user_id, null, null, null, 0);
+				new Accounts(user_id, null, null, null, 0, null, null, null);
 			FindAccountService findAccountService = new FindAccountService();
 			Accounts account = findAccountService.execute(findAccount);
 			System.out.println(account);

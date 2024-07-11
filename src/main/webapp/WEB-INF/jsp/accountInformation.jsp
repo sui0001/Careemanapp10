@@ -42,6 +42,18 @@
             <th>メール</th>
             <td><%= requestAccount.getMail() %></td>
             </tr>
+            <tr>
+            <th>目標</th>
+            <td><%= requestAccount.getGoal() %></td>
+            </tr>
+            <tr>
+            <th>履歴書</th>
+            <td><%= requestAccount.getLink_resume() %></td>
+            </tr>
+            <tr>
+            <th>職務経歴書</th>
+            <td><%= requestAccount.getLink_work_history() %></td>
+            </tr>
         </table>
     </div>
     
