@@ -16,8 +16,16 @@
     <div class="container">
 	<form action="/Careemanapp10/main" method="post">
         <p class="fsize">ログイン画面</p>
-		<p>メールアドレス<br><input type="text" name="mail" placeholder="nekoneko29q@gmail.com"></p>
-		<p>パスワード<br><input type="password" name="pass" placeholder="パスワードを入力"></p>    
+        <table>
+            <tr>
+                <td>メールアドレス</td>
+                <td><input type="text" name="mail" placeholder="nekoneko29q@gmail.com"></td>
+            </tr>
+            <tr>
+                <td>パスワード</td>
+                <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
+            </tr>
+        </table>
         <p><button type="submit">ログイン</button></p>
     </form>
         <div class="home">
