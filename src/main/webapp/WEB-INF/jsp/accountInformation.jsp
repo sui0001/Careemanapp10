@@ -5,6 +5,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="domain.*" %>
+
+<request.setCharacterEncoding("UTF-8"); %>
+<% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
 <!DOCTYPE html>
 <html>
 
@@ -24,21 +28,20 @@
         <table>
             <tr>
             <th>ユーザーID</th>
-            <td><%= request.getAttribute("user_id") %></td>
+            <td><%= requestAccount.getUser_id() %></td>
             </tr>
             <tr>
             <th>名前</th>
-            <td><%= request.getAttribute("name") %></td>
+            <td><%= requestAccount.getName() %></td>
             </tr>
             <tr>
             <th>年齢</th>
-            <td><%= request.getAttribute("age") %></td>
+            <td><%= requestAccount.getAge() %></td>
             </tr>
             <tr>
             <th>メール</th>
-            <td><%= request.getAttribute("mail") %></td>
+            <td><%= requestAccount.getMail() %></td>
             </tr>
-        </table>
         </table>
     </div>
     

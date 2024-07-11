@@ -58,6 +58,44 @@ public class AccountsDAO {
     }
     
 
+	// findByAccountメソッド：ユーザー情報を取得するメソッド
+	public Accounts findByAccount(Accounts findAccount) {
+		//変数のスコープの都合上、変数accontsをtryブロックの外で初期化する。
+		// 後でデータベースから取得したユーザー情報を格納するための変数
+		Accounts accounts = null;
+
+		// データベースへ接続（Connectionオブジェクトconnを自動的に閉じるtry-with-resources文）
+		try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
+
+			// SELECT文を準備
+			String sql = "SELECT user_id, pass, mail, name, age FROM accounts WHERE user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// 1番目のプレースホルダにuser_idをセット
+			pStmt.setString(1, findAccount.getUser_id());
+			// System.out.println(findAccount.getUser_id());
+
+			// SELECT文を実行し、結果をrsに格納
+			ResultSet rs = pStmt.executeQuery();
+
+			if (rs.next()) {
+				// 結果からデータを取得
+				String user_id = rs.getString("user_id");
+				String pass = rs.getString("pass");
+				String mail = rs.getString("mail");
+				String name = rs.getString("name");
+				int age = rs.getInt("age");
+
+				// 一致したユーザーが存在した場合、そのユーザーを表すAccountsインスタンスを生成
+				accounts = new Accounts(user_id, pass, mail, name, age);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		// DBにユーザー情報があればユーザー情報が入った変数accountsを返す。なければnullを返すcatchブロックの中のreturn文
+		return accounts;
+	}
 
 	// createメソッド：新規登録するメソッド
     public String create(Accounts newAccount) {

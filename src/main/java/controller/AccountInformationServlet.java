@@ -13,6 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import domain.Accounts;
+import service.FindAccountService;
 
 @WebServlet("/AccountInformation")
 public class AccountInformationServlet extends HttpServlet {
@@ -21,6 +25,22 @@ public class AccountInformationServlet extends HttpServlet {
 	
 	// GETメソッド：
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+			// セッションスコープからの取得
+			HttpSession session = req.getSession();
+			// ユーザIDを取得
+			String user_id = (String) session.getAttribute("user_id");
+
+			// ユーザIDを基にユーザー情報を取得
+			Accounts findAccount =
+				new Accounts(user_id, null, null, null, 0);
+			FindAccountService findAccountService = new FindAccountService();
+			Accounts account = findAccountService.execute(findAccount);
+			System.out.println(account);
+
+			// ユーザー情報をリクエストスコープに保存
+			req.setAttribute("account", account);
+
 		// ユーザー情報画面のAccountinformation.jspに遷移
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/accountInformation.jsp");
 		rd.forward(req, res);

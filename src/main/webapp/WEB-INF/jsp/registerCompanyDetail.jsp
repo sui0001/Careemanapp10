@@ -1,6 +1,6 @@
 <%-- 就労条件登録画面 --%>
 
-<%-- TODO：フォーム入力例を追加する --%>
+<%-- TODO：テーブル形式にする --%>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"

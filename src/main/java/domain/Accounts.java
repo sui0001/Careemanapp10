@@ -14,7 +14,16 @@ public class Accounts {
 		this.name = name;
 		this.age = age;
 	}
+	
+	public Accounts(String user_id, String mail, String name, int age) {
+		this.user_id = user_id;
+		this.mail = mail;
+		this.name = name;
+		this.age = age;
+	}
 
+
+	// GetterとSetter
 	public String getUser_id() {
 		return user_id;
 	}

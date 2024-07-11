@@ -1,6 +1,6 @@
 <%-- 面接登録画面 --%>
 
-<%-- TODO：面接内容基本の内容をチェックボックスに変更する --%>
+<%-- TODO：テーブル形式にする --%>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"

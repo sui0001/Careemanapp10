@@ -43,7 +43,7 @@ public class CompanyListServlet extends HttpServlet {
 						null, null, null, null);
 			FindCompanyService findcompanyService = new FindCompanyService();
 			List<CompanyDTO> companies = findcompanyService.execute(findCompany);
-			System.out.println(companies);
+			// System.out.println(companies);
 			
 			// 企業情報をリクエストスコープに保存
 			req.setAttribute("companies", companies);

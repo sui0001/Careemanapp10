@@ -1,8 +1,8 @@
 // GETメソッド：企業単体ページのcompany.jspに遷移するためのサーブレット
 // POSTメソッド：
 
-// TODO：InterviewとDetailのぬるぽしょり
-// データベース作成
+// TODO：InterviewとDetailのぬるぽしょり!!!!!!
+
 
 package controller;
 
@@ -46,14 +46,14 @@ public class CompanyServlet extends HttpServlet {
 						null, null, null, null);
 			FindSingleCompanyService findsinglecompanyService = new FindSingleCompanyService();
 			CompanyDTO singleCompany = findsinglecompanyService.execute(findsingleCompany);
-			System.out.println(singleCompany);
+			// System.out.println(singleCompany);
 
 			// 2. 企業IDを基に面接情報を取得
 			InterviewDTO findInterview =
 				new InterviewDTO(company_id, 0, null, null, null, null, null);
 			FindInterviewService findInterviewService = new FindInterviewService();
 			List<InterviewDTO> interviews = findInterviewService.execute(findInterview);
-			System.out.println(interviews);
+			// System.out.println(interviews);
 
 			// 3.企業IDを基に企業詳細情報を取得
 			CompanyDetailDTO findCompanyDetail =
@@ -62,7 +62,7 @@ public class CompanyServlet extends HttpServlet {
 						0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, 0, 0);
 			FindCompanyDetailService findCompanyDetailService = new FindCompanyDetailService();
 			CompanyDetailDTO details = findCompanyDetailService.execute(findCompanyDetail);
-			System.out.println(details);
+			// System.out.println(details);
 
 		// 企業単体の情報をリクエストスコープに保存
 		req.setAttribute("singleCompany", singleCompany);
