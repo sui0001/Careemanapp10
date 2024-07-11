@@ -47,6 +47,9 @@ public class CompanyListServlet extends HttpServlet {
 			
 			// 企業情報をリクエストスコープに保存
 			req.setAttribute("companies", companies);
+
+			// company_idをセッションスコープから削除
+			session.removeAttribute("company_id");
 		
 		// 企業リスト画面に遷移
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyList.jsp");

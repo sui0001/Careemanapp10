@@ -37,6 +37,22 @@ public class CompanyDTO {
 	public CompanyDTO(String user_id) {
 		this.user_id = user_id;
 	}
+
+	public CompanyDTO(int company_id, String company_name, String selection_application, String selection_status, String selection_date, String selection_flow, String link_hp, String link_review, String selection_task, String selection_motivation, String positive_points, String negative_points, String points_to_confirm) {
+		this.company_id = company_id;
+		this.company_name = company_name;
+		this.selection_application = selection_application;
+		this.selection_status = selection_status;
+		this.selection_date = selection_date;
+		this.selection_flow = selection_flow;
+		this.link_hp = link_hp;
+		this.link_review = link_review;
+		this.selection_task = selection_task;
+		this.selection_motivation = selection_motivation;
+		this.positive_points = positive_points;
+		this.negative_points = negative_points;
+		this.points_to_confirm = points_to_confirm;
+	}
 	
     
     // GetterとSetter

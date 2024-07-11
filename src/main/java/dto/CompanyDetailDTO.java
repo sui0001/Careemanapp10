@@ -18,10 +18,14 @@ public class CompanyDetailDTO {
         private String paid_holidays; // 有給休暇
         private String other_holidays; // 休暇
         private String holiday_notes; // 休暇メモ
-        private int annual_salary; // 年収
-        private int monthly_salary; // 月収
-        private int basic_salary; // 基本給
-        private int fixed_overtime_pay; // 固定残業代
+        private int annual_salary_upper; // 年収上限
+		private int annual_salary_lower; // 年収下限
+        private int monthly_salary_upper; // 月収上限
+		private int monthly_salary_lower; // 月収下限
+        private int basic_salary_upper; // 基本給上限
+		private int basic_salary_lower; // 基本給下限
+        private int fixed_overtime_pay_upper; // 固定残業代上限
+		private int fixed_overtime_pay_lower; // 固定残業代下限
         private int fixed_overtime_hours; // 固定残業時間
         private int commuting_allowance; // 通勤手当
         private int housing_allowance; // 住宅手当
@@ -36,44 +40,58 @@ public class CompanyDetailDTO {
         private int retirement_benefits; // 退職金
 
 
-        public CompanyDetailDTO(int company_id, int company_detail_id, String management_status, String business_content, String job_description, String work_location, String remote_work, String working_hours, int standard_working_hours, int break_time, int break_time_rule, int average_overtime_hours, int annual_holidays, String holiday_type, String paid_holidays, String other_holidays, String holiday_notes, int annual_salary, int monthly_salary, int basic_salary, int fixed_overtime_pay, int fixed_overtime_hours, int commuting_allowance, int housing_allowance, int qualification_support, int qualification_allowance, int other_allowances, int bonus, String bonus_record, String social_insurance, String probation_period, int probation_period_changes, int retirement_benefits) {
-            this.company_id = company_id;
+        // コンストラクタ
+		public CompanyDetailDTO(int company_id, int company_detail_id, String management_status, String business_content,
+				String job_description, String work_location, String remote_work, String working_hours,
+				int standard_working_hours, int break_time, int break_time_rule, int average_overtime_hours,
+				int annual_holidays, String holiday_type, String paid_holidays, String other_holidays,
+				String holiday_notes, int annual_salary_upper, int annual_salary_lower, int monthly_salary_upper,
+				int monthly_salary_lower, int basic_salary_upper, int basic_salary_lower, int fixed_overtime_pay_upper,
+				int fixed_overtime_pay_lower, int fixed_overtime_hours, int commuting_allowance, int housing_allowance,
+				int qualification_support, int qualification_allowance, int other_allowances, int bonus,
+				String bonus_record, String social_insurance, String probation_period, int probation_period_changes,
+				int retirement_benefits) {
+			this.company_id = company_id;
 			this.company_detail_id = company_detail_id;
-            this.management_status = management_status;
-            this.business_content = business_content;
-            this.job_description = job_description;
-            this.work_location = work_location;
-            this.remote_work = remote_work;
-            this.working_hours = working_hours;
-            this.standard_working_hours = standard_working_hours;
-            this.break_time = break_time;
-            this.break_time_rule = break_time_rule;
-            this.average_overtime_hours = average_overtime_hours;
-            this.annual_holidays = annual_holidays;
-            this.holiday_type = holiday_type;
-            this.paid_holidays = paid_holidays;
-            this.other_holidays = other_holidays;
-            this.holiday_notes = holiday_notes;
-            this.annual_salary = annual_salary;
-            this.monthly_salary = monthly_salary;
-            this.basic_salary = basic_salary;
-            this.fixed_overtime_pay = fixed_overtime_pay;
-            this.fixed_overtime_hours = fixed_overtime_hours;
-            this.commuting_allowance = commuting_allowance;
-            this.housing_allowance = housing_allowance;
-            this.qualification_support = qualification_support;
-            this.qualification_allowance = qualification_allowance;
-            this.other_allowances = other_allowances;
-            this.bonus = bonus;
-            this.bonus_record = bonus_record;
-            this.social_insurance = social_insurance;
-            this.probation_period = probation_period;
-            this.probation_period_changes = probation_period_changes;
-            this.retirement_benefits = retirement_benefits;
-        }
+			this.management_status = management_status;
+			this.business_content = business_content;
+			this.job_description = job_description;
+			this.work_location = work_location;
+			this.remote_work = remote_work;
+			this.working_hours = working_hours;
+			this.standard_working_hours = standard_working_hours;
+			this.break_time = break_time;
+			this.break_time_rule = break_time_rule;
+			this.average_overtime_hours = average_overtime_hours;
+			this.annual_holidays = annual_holidays;
+			this.holiday_type = holiday_type;
+			this.paid_holidays = paid_holidays;
+			this.other_holidays = other_holidays;
+			this.holiday_notes = holiday_notes;
+			this.annual_salary_upper = annual_salary_upper;
+			this.annual_salary_lower = annual_salary_lower;
+			this.monthly_salary_upper = monthly_salary_upper;
+			this.monthly_salary_lower = monthly_salary_lower;
+			this.basic_salary_upper = basic_salary_upper;
+			this.basic_salary_lower = basic_salary_lower;
+			this.fixed_overtime_pay_upper = fixed_overtime_pay_upper;
+			this.fixed_overtime_pay_lower = fixed_overtime_pay_lower;
+			this.fixed_overtime_hours = fixed_overtime_hours;
+			this.commuting_allowance = commuting_allowance;
+			this.housing_allowance = housing_allowance;
+			this.qualification_support = qualification_support;
+			this.qualification_allowance = qualification_allowance;
+			this.other_allowances = other_allowances;
+			this.bonus = bonus;
+			this.bonus_record = bonus_record;
+			this.social_insurance = social_insurance;
+			this.probation_period = probation_period;
+			this.probation_period_changes = probation_period_changes;
+			this.retirement_benefits = retirement_benefits;
+		}
 
 
-        // GetterとSetter
+		// GetterとSetter
 		public int getCompany_id() {
 			return company_id;
 		}
@@ -244,43 +262,83 @@ public class CompanyDetailDTO {
 		}
 
 
-		public int getAnnual_salary() {
-			return annual_salary;
+		public int getAnnual_salary_upper() {
+			return annual_salary_upper;
 		}
 
 
-		public void setAnnual_salary(int annual_salary) {
-			this.annual_salary = annual_salary;
+		public void setAnnual_salary_upper(int annual_salary_upper) {
+			this.annual_salary_upper = annual_salary_upper;
 		}
 
 
-		public int getMonthly_salary() {
-			return monthly_salary;
+		public int getAnnual_salary_lower() {
+			return annual_salary_lower;
 		}
 
 
-		public void setMonthly_salary(int monthly_salary) {
-			this.monthly_salary = monthly_salary;
+		public void setAnnual_salary_lower(int annual_salary_lower) {
+			this.annual_salary_lower = annual_salary_lower;
 		}
 
 
-		public int getBasic_salary() {
-			return basic_salary;
+		public int getMonthly_salary_upper() {
+			return monthly_salary_upper;
 		}
 
 
-		public void setBasic_salary(int basic_salary) {
-			this.basic_salary = basic_salary;
+		public void setMonthly_salary_upper(int monthly_salary_upper) {
+			this.monthly_salary_upper = monthly_salary_upper;
 		}
 
 
-		public int getFixed_overtime_pay() {
-			return fixed_overtime_pay;
+		public int getMonthly_salary_lower() {
+			return monthly_salary_lower;
 		}
 
 
-		public void setFixed_overtime_pay(int fixed_overtime_pay) {
-			this.fixed_overtime_pay = fixed_overtime_pay;
+		public void setMonthly_salary_lower(int monthly_salary_lower) {
+			this.monthly_salary_lower = monthly_salary_lower;
+		}
+
+
+		public int getBasic_salary_upper() {
+			return basic_salary_upper;
+		}
+
+
+		public void setBasic_salary_upper(int basic_salary_upper) {
+			this.basic_salary_upper = basic_salary_upper;
+		}
+
+
+		public int getBasic_salary_lower() {
+			return basic_salary_lower;
+		}
+
+
+		public void setBasic_salary_lower(int basic_salary_lower) {
+			this.basic_salary_lower = basic_salary_lower;
+		}
+
+
+		public int getFixed_overtime_pay_upper() {
+			return fixed_overtime_pay_upper;
+		}
+
+
+		public void setFixed_overtime_pay_upper(int fixed_overtime_pay_upper) {
+			this.fixed_overtime_pay_upper = fixed_overtime_pay_upper;
+		}
+
+
+		public int getFixed_overtime_pay_lower() {
+			return fixed_overtime_pay_lower;
+		}
+
+
+		public void setFixed_overtime_pay_lower(int fixed_overtime_pay_lower) {
+			this.fixed_overtime_pay_lower = fixed_overtime_pay_lower;
 		}
 
 
@@ -402,6 +460,9 @@ public class CompanyDetailDTO {
 		public void setRetirement_benefits(int retirement_benefits) {
 			this.retirement_benefits = retirement_benefits;
 		}
+
+
+
         
         
         

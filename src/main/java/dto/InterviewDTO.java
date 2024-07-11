@@ -10,9 +10,9 @@ public class InterviewDTO {
 	private String interview_memo; // メモ
 
 
-    public InterviewDTO(int interview_id, int company_id, String interview_date, String interviewer_name, String interview_content_basic, String interview_content_additional, String interview_memo) {
-        this.interview_id = interview_id;
+    public InterviewDTO(int company_id, int interview_id, String interview_date, String interviewer_name, String interview_content_basic, String interview_content_additional, String interview_memo) {
         this.company_id = company_id;
+        this.interview_id = interview_id;
         this.interview_date = interview_date;
         this.interviewer_name = interviewer_name;
         this.interview_content_basic = interview_content_basic;
@@ -22,6 +22,16 @@ public class InterviewDTO {
 
 
     // GetterとSetter
+	public int getCompany_id() {
+		return company_id;
+	}
+	
+	
+	public void setCompany_id(int company_id) {
+		this.company_id = company_id;
+	}
+	
+	
 	public int getInterview_id() {
 		return interview_id;
 	}
@@ -29,16 +39,6 @@ public class InterviewDTO {
 
 	public void setInterview_id(int interview_id) {
 		this.interview_id = interview_id;
-	}
-
-
-	public int getCompany_id() {
-		return company_id;
-	}
-
-
-	public void setCompany_id(int company_id) {
-		this.company_id = company_id;
 	}
 
 

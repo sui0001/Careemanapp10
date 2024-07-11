@@ -8,6 +8,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="dto.*" %>
 <%@ page import="java.util.List" %>
+
 <% request.setCharacterEncoding("UTF-8"); %>
 <% List<CompanyDTO> requestCompanyList =  (List<CompanyDTO>)request.getAttribute("companies"); %>
 
@@ -56,7 +57,8 @@
             <tr>
                 <%-- <td><%= requestCompanyList.getUser_id() %></td> --%>
                 <%-- <td><%= requestCompanyList.getCompany_id() %></td> --%>
-                <td><a href="/Careemanapp10/Company"><%= company.getCompany_name() %></a></td>
+                <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %>
+                <td><a href=<%= url %>><%= company.getCompany_name() %></a></td>
                 <td><%= company.getSelection_application() %></td>
                 <td><%= company.getSelection_status() %></td>
                 <td><%= company.getSelection_date() %></td>

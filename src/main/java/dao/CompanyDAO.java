@@ -1,4 +1,5 @@
-// findByCompanyメソッド：企業情報をDBで検索し、ヒットした場合リクエストスコープに保存するメソッド
+// findByCompanyメソッド：user_idを基に企業情報をDBで検索し、ヒットした場合リスト形式でリクエストスコープに保存するメソッド
+// findSingleCompanyメソッド：company_idを基に企業情報をDBで検索し、ヒットした場合リクエストスコープに保存するメソッド
 // createCompanyメソッド：企業情報をDBに登録するメソッド
 
 
@@ -20,11 +21,11 @@ public class CompanyDAO {
     private final String DB_PASS = "0322pyora";
 
 
-    // 企業検索用のメソッド：user_idを元に企業情報を取得する
+    // 企業検索メソッド：user_idを元に企業情報を取得して"企業リスト"にする
     public List<CompanyDTO> findByCompany(CompanyDTO findCompany){
 
-        // 変数のスコープの都合上、変数accontsをtryブロックの外で初期化する。
-        // 後でデータベースから取得したユーザー情報を格納するための変数
+        // 変数のスコープの都合上、変数companiesをtryブロックの外で初期化する。
+        // 後でデータベースから取得した企業情報を格納するための変数
         List<CompanyDTO> companies = new ArrayList<>();
 
         // データベースへ接続（Connectionオブジェクトconnを自動的に閉じるtry-with-resources文）
@@ -42,7 +43,7 @@ public class CompanyDAO {
             
             while (rs.next()) {
                 // 結果からデータを取得
-                String user_id = rs.getString("user_id");
+                // String user_id = rs.getString("user_id");
                 int company_id = rs.getInt("company_id");
                 String company_name = rs.getString("company_name");
                 String selection_application = rs.getString("selection_application");
@@ -59,7 +60,7 @@ public class CompanyDAO {
 
                 // 一致したデータを表すCompanyDTOインスタンスを生成
                 CompanyDTO company =
-                    new CompanyDTO(user_id, company_id, company_name, selection_application,
+                    new CompanyDTO(company_id, company_name, selection_application,
                         selection_status, selection_date, selection_flow, link_hp, link_review,
                             selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
                 
@@ -76,60 +77,60 @@ public class CompanyDAO {
         return companies;
     }
 
-    // // 企業検索用のメソッド：user_idを元に企業情報を取得する
-    // public CompanyDTO findByCompany(CompanyDTO findCompany){
 
-    //     //変数のスコープの都合上、変数accontsをtryブロックの外で初期化する。
-	// 	// 後でデータベースから取得したユーザー情報を格納するための変数
-    //     CompanyDTO company = null;
+    // 企業検索メソッド：company_idを元に企業情報を取得して出力する
+    public CompanyDTO findSingleCompany(CompanyDTO findSingleCompany){
 
-    //     // データベースへ接続（Connectionオブジェクトconnを自動的に閉じるtry-with-resources文）
-    //     try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
+        // 変数のスコープの都合上、変数companiesをtryブロックの外で初期化する。
+        // 後でデータベースから取得した企業情報を格納するための変数
+        CompanyDTO singleCompany = null;
+
+        // データベースへ接続（Connectionオブジェクトconnを自動的に閉じるtry-with-resources文）
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
             
-    //         // SELECT文を準備
-    //         String sql = "SELECT * FROM companies WHERE user_id = ?";
-    //         PreparedStatement pStmt = conn.prepareStatement(sql);
+            // SELECT文を準備
+            String sql = "SELECT * FROM companies WHERE company_id = ?";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
 
-    //         // 1番目のプレースホルダに値をセット
-    //         pStmt.setString(1, findCompany.getUser_id());
-    //         // SELECT文を実行し、結果をrsに格納
-    //         ResultSet rs = pStmt.executeQuery();
+            // 1番目のプレースホルダに値をセット
+            pStmt.setInt(1, findSingleCompany.getCompany_id());
+            // SELECT文を実行し、結果をrsに格納
+            ResultSet rs = pStmt.executeQuery();
 
             
-    //         if (rs.next()) {
-    //             // 結果からデータを取得
-    //             String user_id = rs.getString("user_id");
-    //             int company_id = rs.getInt("company_id");
-    //             String company_name = rs.getString("company_name");
-    //             String selection_application = rs.getString("selection_application");
-    //             String selection_status = rs.getString("selection_status");
-    //             String selection_date = rs.getString("selection_date");
-    //             String selection_flow = rs.getString("selection_flow");
-    //             String link_hp = rs.getString("link_hp");
-    //             String link_review = rs.getString("link_review");
-    //             String selection_task = rs.getString("selection_task");
-    //             String selection_motivation = rs.getString("selection_motivation");
-    //             String positive_points = rs.getString("positive_points");
-    //             String negative_points = rs.getString("negative_points");
-    //             String points_to_confirm = rs.getString("points_to_confirm");
+            while (rs.next()) {
+                // 結果からデータを取得
+                // String user_id = rs.getString("user_id");
+                int company_id = rs.getInt("company_id");
+                String company_name = rs.getString("company_name");
+                String selection_application = rs.getString("selection_application");
+                String selection_status = rs.getString("selection_status");
+                String selection_date = rs.getString("selection_date");
+                String selection_flow = rs.getString("selection_flow");
+                String link_hp = rs.getString("link_hp");
+                String link_review = rs.getString("link_review");
+                String selection_task = rs.getString("selection_task");
+                String selection_motivation = rs.getString("selection_motivation");
+                String positive_points = rs.getString("positive_points");
+                String negative_points = rs.getString("negative_points");
+                String points_to_confirm = rs.getString("points_to_confirm");
 
-
-    //             // 一致したデータを表すCompanyDTOインスタンスを生成
-    //             company =
-    //                 new CompanyDTO(user_id, company_id, company_name, selection_application,
-    //                     selection_status, selection_date, selection_flow, link_hp, link_review,
-    //                         selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
-    //         }
+                // 一致したデータを表すCompanyDTOインスタンスを生成
+                singleCompany =
+                    new CompanyDTO(company_id, company_name, selection_application,
+                        selection_status, selection_date, selection_flow, link_hp, link_review,
+                            selection_task, selection_motivation, positive_points, negative_points, points_to_confirm);
+                
+            }
         
-    //     }catch (SQLException e) {
-    //         e.printStackTrace();
-    //         return null;
-    //     }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
 
-    //     // DBにユーザー情報があればユーザー情報が入った変数companyを返す。なければnullを返すcatchブロックの中のreturn文
-    //     return company;
-
-    // }
+        // DBに企業情報があればユーザー情報が入った変数companyを返す。なければnullを返すcatchブロックの中のreturn文
+        return singleCompany;
+    }
 
 
     // 企業登録用のメソッド：企業を登録する (ユーザーIDはセッションスコープから取り出して登録)

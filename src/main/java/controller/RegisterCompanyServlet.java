@@ -1,7 +1,7 @@
 // GETメソッド：企業登録画面のregisterCompany.jspに遷移
 // POSTメソッド：
 
-// TODO
+// TODO：リクエストスコープにcompany_idをセットして面接情報を取得できるようにする
 
 package controller;
 
