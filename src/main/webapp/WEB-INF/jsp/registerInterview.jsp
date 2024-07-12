@@ -13,7 +13,7 @@
 
 <body>
     <%-- ページタイトルを表示 --%>
-    <p>面接登録</p>
+    <h1>面接登録</h1>
 
     <%-- 面接内容を登録 --%>
     <form action="/Careemanapp10/RegisterInterview" method="post">

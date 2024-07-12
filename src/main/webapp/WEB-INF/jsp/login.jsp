@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <p class="fsize">ログイン画面</p>
+    <h1>ログイン</h1>
         
     <form action="/Careemanapp10/main" method="post">
         <table>

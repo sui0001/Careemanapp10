@@ -19,7 +19,7 @@
 
 <body>
     <%-- ページタイトルを表示 --%>
-    <p>ユーザー情報更新</p>
+    <h1>ユーザー情報更新</h1>
 
     <%-- ユーザー情報を更新 --%>
     <form action="/Careemanapp10/AccountInformation" method="post">

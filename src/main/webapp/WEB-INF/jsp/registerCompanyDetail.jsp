@@ -13,7 +13,7 @@
 
 <body>
     <%-- ページタイトルを表示 --%>
-    <p>就労条件登録</p>
+    <h1>就労条件登録</h1>
 
     <%-- 就労条件を登録する --%>
 	<form action="/Careemanapp10/RegisterCompanyDetail" method="post">

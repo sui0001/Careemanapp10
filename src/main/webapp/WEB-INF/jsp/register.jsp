@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<h2>新規登録</h2>
+	<h1>新規登録</h1>
 	<form action="register" method="post">
 		<table>
 			<tr>

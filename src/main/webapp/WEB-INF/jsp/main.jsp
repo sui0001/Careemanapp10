@@ -9,20 +9,24 @@
 <head>
 <meta charset="UTF-8">
 <title>メイン画面</title>
-	<ul class="menu">
-		<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
-		<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
-		<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
-		<li><a href="/Careemanapp10/logout">ログアウト</a></li>
-	</ul>
 </head>
 
 <body>
 	<%-- タイトルを表示する --%>
-	<p>Careemanapp10</p>
+	<h1>Careemanapp10</h1>
+
+	<%-- メニューバー --%>
+	<nav>
+		<ul class="menu">
+			<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
+			<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
+			<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
+			<li><a href="/Careemanapp10/logout">ログアウト</a></li>
+		</ul>
+	</nav>
 
 	<%-- ユーザー名を表示する --%>
-	<p>ようこそ <%= session.getAttribute("username") %> さん</p>
+	<p>ようこそ <%= session.getAttribute("userName") %> さん</p>
 
 	<%-- 目標を表示する --%>
 	<p>目標</p>

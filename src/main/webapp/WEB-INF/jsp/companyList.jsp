@@ -21,7 +21,7 @@
 
 <body>
     <%-- ページタイトルを表示する --%>
-    <p>応募企業リスト</p>
+    <h1>選考状況</h1>
 
     <%-- 企業登録画面へ遷移するボタン --%>
     <form action="/Careemanapp10/RegisterCompany" method="get">

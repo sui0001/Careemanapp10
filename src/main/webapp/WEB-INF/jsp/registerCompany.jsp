@@ -13,7 +13,7 @@
 
 <body>
     <%-- ページタイトルを表示する --%>
-    <p>企業登録</p>
+    <h1>企業登録</h1>
 
     <%-- 企業情報を登録する --%>
     <form action="/Careemanapp10/CompanyList" method="post">

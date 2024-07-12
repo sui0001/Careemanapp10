@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<p>Careemanappへようこそ</p>
+	<h1>Careemanappへようこそ</h1>
 	<p><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
 	<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
 </body>
