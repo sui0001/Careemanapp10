@@ -13,27 +13,35 @@
 </head>
 
 <body>
-    <h1>ログイン</h1>
-        
-    <form action="/Careemanapp10/main" method="post">
-        <table>
-            <tr>
-                <th>メールアドレス</th>
-                <td><input type="text" name="mail" placeholder="nekoneko29q@gmail.com"></td>
-            </tr>
-            <tr>
-                <th>パスワード</th>
-                <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
-            </tr>
-        </table>
-        <p><button type="submit">ログイン</button></p>
-    </form>
+	<%-- header --%>
+		<%@include file= "headerBeforeLogin.jsp" %>
 
-    <a href="/Careemanapp10/welcome">ホームに戻る</a></p>
-    
-    <c:if test="${not empty loginError}">
-        <p style="color: red;">${loginError}</p>
-    </c:if>
+	<%-- contents --%>
+
+        <h1>ログイン</h1>
+            
+        <form action="/Careemanapp10/main" method="post">
+            <table>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td><input type="text" name="mail" placeholder="nekoneko29q@gmail.com"></td>
+                </tr>
+                <tr>
+                    <th>パスワード</th>
+                    <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
+                </tr>
+            </table>
+            <p><button type="submit">ログイン</button></p>
+        </form>
+
+        <a href="/Careemanapp10/welcome">ホームに戻る</a></p>
+        
+        <c:if test="${not empty loginError}">
+            <p style="color: red;">${loginError}</p>
+        </c:if>
+
+	<%-- footer --%>
+		<%@include file= "footerBeforeLogin.jsp" %>
 </body>
 
 </html>

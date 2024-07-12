@@ -17,15 +17,23 @@
 </head>
 
 <body>
-    <%-- ページタイトルを表示する --%>
-    <div class="title">
-        <h1>企業比較</h1>
-    </div>
+	<%-- header --%>
+		<%@include file= "headerAfterLogin.jsp" %>
 
-    <%-- 企業比較テーブルの表示 --%>
-    <div class="comCompareTable">
-        // 企業比較用のテーブルを作成
-    </div>
+	<%-- contents --%>
+
+        <%-- ページタイトルを表示する --%>
+        <div class="title">
+            <h1>企業比較</h1>
+        </div>
+
+        <%-- 企業比較テーブルの表示 --%>
+        <div class="comCompareTable">
+            // 企業比較用のテーブルを作成
+        </div>
+
+	<%-- footer --%>
+		<%@include file= "footerAfterLogin.jsp" %>
 </body>
 
 </html>

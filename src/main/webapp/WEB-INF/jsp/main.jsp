@@ -12,29 +12,24 @@
 </head>
 
 <body>
-	<%-- タイトルを表示する --%>
-	<h1>Careemanapp10</h1>
+	<%-- header --%>
+		<%@include file= "headerAfterLogin.jsp" %>
 
-	<%-- メニューバー --%>
-	<nav>
-		<ul class="menu">
-			<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
-			<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
-			<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
-			<li><a href="/Careemanapp10/logout">ログアウト</a></li>
-		</ul>
-	</nav>
+	<%-- contents --%>
 
-	<%-- ユーザー名を表示する --%>
-	<p>ようこそ <%= session.getAttribute("userName") %> さん</p>
+		<%-- ユーザー名を表示する --%>
+		<p>ようこそ <%= session.getAttribute("userName") %> さん</p>
 
-	<%-- 目標を表示する --%>
-	<p>目標</p>
-	<p>// ユーザーが登録した目標を表示するコードを記述</p>
+		<%-- 目標を表示する --%>
+		<p>目標</p>
+		<p>// ユーザーが登録した目標を表示するコードを記述</p>
 
-	<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
-	<p>1週間</p>
-	<p>// カレンダーを表示するコードを記述</p>
+		<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
+		<p>1週間</p>
+		<p>// カレンダーを表示するコードを記述</p>
+
+	<%-- footer --%>
+		<%@include file= "footerAfterLogin.jsp" %>
 </body>
 
 </html>

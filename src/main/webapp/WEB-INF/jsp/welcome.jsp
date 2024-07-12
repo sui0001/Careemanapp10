@@ -12,9 +12,17 @@
 </head>
 
 <body>
-	<h1>Careemanappへようこそ</h1>
-	<p><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
-	<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
+	<%-- header --%>
+		<%@include file= "headerBeforeLogin.jsp" %>
+
+	<%-- contents --%>
+
+		<h1>Careemanappへようこそ</h1>
+		<p><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
+		<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
+
+	<%-- footer --%>
+		<%@include file= "footerBeforeLogin.jsp" %>
 </body>
 
 </html>
