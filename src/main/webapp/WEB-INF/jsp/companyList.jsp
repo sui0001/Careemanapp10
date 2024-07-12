@@ -2,7 +2,6 @@
 
 <%-- TODO：メイン画面に戻るボタンをつくる --%>
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -22,23 +21,16 @@
 
 <body>
     <%-- ページタイトルを表示する --%>
-    <div class="title">
-        <p>応募企業リスト</p>
-    </div>
+    <p>応募企業リスト</p>
 
     <%-- 企業登録画面へ遷移するボタン --%>
-    <div class="regiComButton">
-        <form action="/Careemanapp10/RegisterCompany" method="get">
-            <input type="submit" value="企業登録">
-        </form>
-    </div>
+    <form action="/Careemanapp10/RegisterCompany" method="get">
+        <input type="submit" value="企業登録">
+    </form>
 
     <%-- 企業リストを表示する --%>
-    <div class="comListTable">
-        <table>
-            <tr>
-            <%-- <th>ユーザーID</th> --%>
-            <%-- <th>企業ID</th> --%>
+    <table>
+        <tr>
             <th>企業名</th>
             <th>応募媒体</th>
             <th>選考状況</th>
@@ -51,12 +43,10 @@
             <th>良い点</th>
             <th>懸念点</th>
             <th>確認事項</th>
-            </tr>
+        </tr>
 
-            <% for (CompanyDTO company : requestCompanyList) { %>
+        <% for (CompanyDTO company : requestCompanyList) { %>
             <tr>
-                <%-- <td><%= requestCompanyList.getUser_id() %></td> --%>
-                <%-- <td><%= requestCompanyList.getCompany_id() %></td> --%>
                 <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %>
                 <td><a href=<%= url %>><%= company.getCompany_name() %></a></td>
                 <td><%= company.getSelection_application() %></td>
@@ -71,9 +61,8 @@
                 <td><%= company.getNegative_points() %></td>
                 <td><%= company.getPoints_to_confirm() %></td>
             </tr>
-            <% } %>
-        </table>
-    </div>
+        <% } %>
+    </table>
 
 </body>
 

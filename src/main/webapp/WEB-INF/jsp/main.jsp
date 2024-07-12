@@ -2,13 +2,13 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
 <title>メイン画面</title>
-<link rel="stylesheet" type="text/css" href="/Careemanapp10/css/main.css">
 	<ul class="menu">
 		<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
 		<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
@@ -19,26 +19,18 @@
 
 <body>
 	<%-- タイトルを表示する --%>
-	<div class="title">
-		<p>Careemanapp10</p>
-	</div>
+	<p>Careemanapp10</p>
 
 	<%-- ユーザー名を表示する --%>
-	<div class="welcome">
-		<p>ようこそ <%= session.getAttribute("username") %> さん</p>
-	</div>
+	<p>ようこそ <%= session.getAttribute("username") %> さん</p>
 
 	<%-- 目標を表示する --%>
-	<div class="goal">
-		<p>目標</p>
-		<p>// ユーザーが登録した目標を表示するコードを記述</p>
-	</div>
+	<p>目標</p>
+	<p>// ユーザーが登録した目標を表示するコードを記述</p>
 
 	<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
-	<div class="calendar">
-		<p>1週間</p>
-		<p>// カレンダーを表示するコードを記述</p>
-	</div>
+	<p>1週間</p>
+	<p>// カレンダーを表示するコードを記述</p>
 </body>
 
 </html>

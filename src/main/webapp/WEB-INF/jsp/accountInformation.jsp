@@ -1,6 +1,5 @@
 <%-- ユーザー情報画面 --%>
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -8,7 +7,6 @@
 <%@ page import="domain.*" %>
 <request.setCharacterEncoding("UTF-8"); %>
 <% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
-
 
 <!DOCTYPE html>
 <html>
@@ -20,43 +18,39 @@
 
 <body>
     <%-- ページタイトルを表示する --%>
-    <div class="title">
-        <p>ユーザー情報</p>
-    </div>
+    <p>ユーザー情報</p>
 
     <%-- ユーザー情報を表示 --%>
-    <div class="userInfoTable">
-        <table>
-            <tr>
+    <table>
+        <tr>
             <th>ユーザーID</th>
             <td><%= requestAccount.getUser_id() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>ユーザーネーム</th>
             <td><%= requestAccount.getName() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>年齢</th>
             <td><%= requestAccount.getAge() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>メール</th>
             <td><%= requestAccount.getMail() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>目標</th>
             <td><%= requestAccount.getGoal() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>履歴書</th>
             <td><%= requestAccount.getLink_resume() %></td>
-            </tr>
-            <tr>
+        </tr>
+        <tr>
             <th>職務経歴書</th>
             <td><%= requestAccount.getLink_work_history() %></td>
-            </tr>
-        </table>
-    </div>
+        </tr>
+    </table>
     
     <%-- ユーザー情報の更新画面へ遷移するボタン --%>
     <form action="/Careemanapp10/AccountUpdate" method="get">
