@@ -73,7 +73,7 @@ public class CompanyDAO {
             return null;
         }
 
-        // DBに企業情報があればユーザー情報が入った変数companyを返す。なければnullを返すcatchブロックの中のreturn文
+        // DBに企業情報があれば企業情報が入った変数companyを返す。なければnullを返すcatchブロックの中のreturn文
         return companies;
     }
 

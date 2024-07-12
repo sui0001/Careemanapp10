@@ -1,14 +1,15 @@
 <%-- ユーザー情報画面 --%>
 
-<%-- TODO：ユーザー情報のテーブルを作成する --%>
-
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="domain.*" %>
 
+<%-- リクエストスコープから取り出す処理 (必要ファイルのインポート忘れない) --%>
+<%@ page import="domain.*" %>
 <request.setCharacterEncoding("UTF-8"); %>
 <% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +32,7 @@
             <td><%= requestAccount.getUser_id() %></td>
             </tr>
             <tr>
-            <th>名前</th>
+            <th>ユーザーネーム</th>
             <td><%= requestAccount.getName() %></td>
             </tr>
             <tr>

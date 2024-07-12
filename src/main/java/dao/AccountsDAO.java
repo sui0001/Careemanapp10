@@ -1,7 +1,7 @@
 // findByLoginメソッド：ログインに使用されたアカウントの有無を確認するメソッド。LoginService.javaのexecuteメソッドで使用
 // findByAccountメソッド：ユーザー情報を取得するメソッド (ユーザー情報画面に遷移する際に使用)
 // createメソッド：新規登録するメソッド
-
+// updateメソッド：ユーザー情報を更新するメソッド
 
 
 package dao;
@@ -165,6 +165,43 @@ public class AccountsDAO {
 			return "登録に失敗しました";
 		}
 		return "登録が完了しました！";
+	}
+
+
+
+	// updateメソッド：ユーザー情報を更新するメソッド
+	public String update(Accounts updateAccount) {
+		// データベースへ接続
+		try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
+
+			// UPDATE文を準備
+			String sql = "UPDATE accounts SET pass = ?, mail = ?, name = ?, age = ?, goal = ?, link_resume = ?, link_work_history = ? WHERE user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// UPDATE文中の「?」に使用する値を設定しSQLを完成
+			pStmt.setString(1, updateAccount.getPass());
+			pStmt.setString(2, updateAccount.getMail());
+			pStmt.setString(3, updateAccount.getName());
+			pStmt.setInt(4, updateAccount.getAge());
+			pStmt.setString(5, updateAccount.getGoal());
+			pStmt.setString(6, updateAccount.getLink_resume());
+			pStmt.setString(7, updateAccount.getLink_work_history());
+			pStmt.setString(8, updateAccount.getUser_id());
+
+			// UPDATE文を実行
+			int result = pStmt.executeUpdate();
+
+			
+
+			//executeUpdate()は結果件数が戻り値として返ってくるメソッド(5章参照)
+			//↓1でなければとはUPDATEが成功したら結果として1が戻り値で帰ってくるので、1じゃないということは失敗を意味する
+			if (result != 1) {
+				return "更新に失敗しました";
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return "更新に失敗しました";
+		}
+		return "更新が完了しました！";
 	}
 }
 

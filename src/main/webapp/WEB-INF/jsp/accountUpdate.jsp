@@ -1,10 +1,15 @@
 <%-- ユーザー情報更新画面 --%>
 
-<%-- TODO：フォームの入力項目を追加する --%>
-
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%-- リクエストスコープから取り出す処理 (必要ファイルのインポート忘れない) --%>
+<%@ page import="domain.*" %>
+<request.setCharacterEncoding("UTF-8"); %>
+<% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -23,32 +28,32 @@
     <form action="/Careemanapp10/AccountInformation" method="post">
         <table>
             <tr>
-                <td>ユーザーネーム</td>
-                <td><input type="text" name="name" placeholder="にゃんたろ"></td>
+            <th>ユーザーネーム</th>
+            <td><input type="text" name="name" placeholder="<%= requestAccount.getName() %>"></td>
             </tr>
             <tr>
-                <td>年齢</td>
-                <td><input type="number" name="age" placeholder="数字を入力"></td>
+            <th>年齢</th>
+            <td><input type="number" name="age" placeholder="<%= requestAccount.getAge() %>"></td>
             </tr>
             <tr>
-                <td>メールアドレス</td>
-                <td><input type="email" name="mail" placeholder="nekoneko29q@gmail.com"></td>
+            <th>メールアドレス</th>
+            <th><input type="email" name="mail" placeholder="<%= requestAccount.getMail() %>"></td>
             </tr>
             <tr>
-                <td>パスワード</td>
-                <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
+            <th>パスワード</th>
+            <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
             </tr>
             <tr>
-                <td>目標</td>
-                <td><input type="text" name="goal" placeholder="目標を入力"></td>
+            <th>目標</th>
+            <td><input type="text" name="goal" placeholder="<%= requestAccount.getGoal() %>"></td>
             </tr>
             <tr>
-                <td>履歴書</td>
-                <td><input type="text" name="link_resume" placeholder="履歴書のリンクを入力"></td>
+            <th>履歴書</th>
+            <td><input type="text" name="link_resume" placeholder="<%= requestAccount.getLink_resume() %>"></td>
             </tr>
             <tr>
-                <td>職務経歴書</td>
-                <td><input type="text" name="link_work_history" placeholder="職務経歴書のリンクを入力"></td>
+            <th>職務経歴書</th>
+            <td><input type="text" name="link_work_history" placeholder="<%= requestAccount.getLink_work_history() %>"></td>
             </tr>
         </table>
         <input type="submit" value="更新">

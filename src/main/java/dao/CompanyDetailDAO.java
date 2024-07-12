@@ -1,4 +1,5 @@
-// findByCompanyDetailメソッド：企業IDを基に企業詳細を取得するメソッド
+// findByCompanyDetailメソッド：企業IDを基に企業詳細を取得するメソッド (1企業分)
+// findByCompanyDetailsメソッド：企業IDを基に企業詳細を取得するメソッド (複数企業分) ※未作成
 // createCompanyDetailメソッド：企業詳細を登録するメソッド
 
 
@@ -93,6 +94,7 @@ public class CompanyDetailDAO {
         // DBに企業詳細があれば企業詳細が入った変数companyDetailを返す。なければnullを返すcatchブロックの中のreturn文
         return companyDetail;
     }
+
 
     // createCompanyDetailメソッド：企業詳細を登録するメソッド
     public String createCompanyDetail(CompanyDetailDTO newCompanyDetail){

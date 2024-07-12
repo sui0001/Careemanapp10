@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import domain.Accounts;
 import service.FindAccountService;
+import service.UpdateAccountService;
 
 @WebServlet("/AccountInformation")
 public class AccountInformationServlet extends HttpServlet {
@@ -49,11 +50,39 @@ public class AccountInformationServlet extends HttpServlet {
 	
 	// POSTメソッド：ユーザー情報のDB更新を行い、ユーザー情報画面のaccountinformation.jspに遷移する
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// ユーザー情報のDB更新を行う
+		
+		// リクエストパラメータの取得
+		req.setCharacterEncoding("UTF-8");
+		// セッションスコープからの取得
+		HttpSession session = req.getSession();
 
-		// ユーザー情報画面のaccountInformation.jspに遷移
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/accountInformation.jsp");
-		rd.forward(req, res);
+		// 更新するユーザー情報を取得
+		String user_id = (String) session.getAttribute("user_id");
+		String name = req.getParameter("name");
+		String mail = req.getParameter("mail");
+		int age = Integer.parseInt(req.getParameter("age"));
+		String pass = req.getParameter("pass");
+		String goal = req.getParameter("goal");
+		String link_resume = req.getParameter("link_resume");
+		String link_work_history = req.getParameter("link_work_history");
+		
+		// ユーザー情報をAccountsインスタンスに格納
+		Accounts updateAccount = new Accounts(user_id, pass, mail, name, age, goal, link_resume, link_work_history);
+		req.setAttribute("updateAccount", updateAccount);
+
+		// DBのユーザー情報を更新
+		UpdateAccountService updateAccountService = new UpdateAccountService();
+		String msg = updateAccountService.execute(updateAccount);
+
+		//更新結果をリクエストスコープに保存
+		req.setAttribute("msg", msg);
+
+		// doGetメソッドを呼び出す
+		doGet(req, res);
+
+		// // ユーザー情報画面のaccountInformation.jspに遷移
+		// RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/accountInformation.jsp");
+		// rd.forward(req, res);
 	}
 
 }

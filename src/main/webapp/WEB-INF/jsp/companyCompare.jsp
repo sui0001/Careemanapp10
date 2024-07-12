@@ -6,6 +6,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +24,7 @@
 
     <%-- 企業比較テーブルの表示 --%>
     <div class="comCompareTable">
-        // 企業比較用のテーブルを作成する
+        // 企業比較用のテーブルを作成
     </div>
 </body>
 

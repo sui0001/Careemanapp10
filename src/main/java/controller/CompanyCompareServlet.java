@@ -23,6 +23,37 @@ public class CompanyCompareServlet extends HttpServlet {
 	
 	// GETメソッド：企業比較ページのcompanyCompare.jspに遷移する
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		// // CompanyListServletと同じ処理
+		// // DBからuser_idを基に企業情報を取得
+			
+		// 	// セッションスコープからの取得
+		// 	HttpSession session = req.getSession();
+		// 	// ユーザIDを取得
+		// 	String user_id = (String) session.getAttribute("user_id");
+			
+		// 	// 1. ユーザIDを基に企業情報を取得
+		// 	CompanyDTO findCompany =
+		// 		new CompanyDTO(user_id, 0, null, null,null,
+		// 			null, null, null, null, null,
+		// 				null, null, null, null);
+		// 	FindCompanyService findcompanyService = new FindCompanyService();
+		// 	List<CompanyDTO> companies = findcompanyService.execute(findCompany);
+		// 	// System.out.println(companies);
+
+		// 	// 2.企業IDを基に企業詳細情報を取得
+		// 	CompanyDetailDTO findCompanyDetail =
+		// 		new CompanyDetailDTO(0, 0, null, null, null,
+		// 			null, null, null, 0, 0, 0, 0, 0, null, null, null, null,
+		// 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, 0, 0);
+		// 	FindCompanyDetailListService findCompanyDetailListService = new FindCompanyDetailListService();
+		// 	List<CompanyDetailDTO> details = findCompanyDetailListService.execute(findCompanyDetail);
+			
+		// 	// 企業情報をリクエストスコープに保存
+		// 	req.setAttribute("companies", companies);
+		// 	req.setAttribute("details", details);
+
+
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyCompare.jsp");
 		rd.forward(req, res);
 	}

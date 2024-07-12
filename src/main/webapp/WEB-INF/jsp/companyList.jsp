@@ -1,15 +1,15 @@
 <%-- 企業リストページ：選考状況 --%>
 
-<%-- TODO：企業を2社以上表示させる --%>
 <%-- TODO：メイン画面に戻るボタンをつくる --%>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%-- リクエストスコープから取り出す処理 (必要ファイルのインポート忘れない) --%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <%@ page import="dto.*" %>
 <%@ page import="java.util.List" %>
-
-<% request.setCharacterEncoding("UTF-8"); %>
 <% List<CompanyDTO> requestCompanyList =  (List<CompanyDTO>)request.getAttribute("companies"); %>
 
 <!DOCTYPE html>

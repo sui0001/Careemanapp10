@@ -1,4 +1,7 @@
 //GETメソッド：トップページのwelcome.jspへフォワード
+// POSTメソッド：アカウントを削除しホーム画面のwelcome.jspへフォワード
+
+// TODO：POSTメソッドを作成する
 
 package controller;
 
