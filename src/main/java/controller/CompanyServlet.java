@@ -36,7 +36,16 @@ public class CompanyServlet extends HttpServlet {
 
 			// リクエストパラメータの取得 (企業リストで選択した企業のcompany_idを取得)
 			req.setCharacterEncoding("UTF-8");
-			int company_id = Integer.parseInt(req.getParameter("company_id"));
+			// セッションスコープからの取得
+			HttpSession session = req.getSession();
+
+			// company_idを取得 (企業リストページのcompanyList.jspから遷移時はリクエストパラメータから取得/面接や詳細ページから遷移時はセッションスコープから取得)
+			int company_id;
+			if (req.getParameter("company_id") == null) {
+				company_id = (int)session.getAttribute("company_id");
+			} else {
+				company_id = Integer.parseInt(req.getParameter("company_id"));
+			}
 			System.out.println(company_id);
 
 			// 1. 企業IDを基に企業単体の情報を取得 (1企業につき1情報だがメソッドを流用するためリストで取得)
@@ -69,9 +78,10 @@ public class CompanyServlet extends HttpServlet {
 		req.setAttribute("interviews", interviews);
 		req.setAttribute("details", details);
 
-		// company_idをセッションスコープに保存
-        HttpSession session = req.getSession();
-		session.setAttribute("company_id", company_id);
+		// company_idをセッションスコープに保存 (セッションスコープにすでに保存されている場合何もしない)
+		if (session.getAttribute("company_id") == null) {
+			session.setAttribute("company_id", company_id);
+		}
 		
 		// 企業単体ページに遷移
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/company.jsp");

@@ -99,7 +99,7 @@ public class RegisterCompanyDetailServlet extends HttpServlet {
 		String msg = postCompanyDetailService.execute(newCompanyDetail);
 		
 		// CompanyServlet.javaを介して企業単体ページのcompany.jspに遷移する
-		res.sendRedirect("/Company");
+		res.sendRedirect("/Careemanapp10/Company");
 
 		// // 企業単体ページのcompany.jspに遷移
 		// RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/company.jsp");
