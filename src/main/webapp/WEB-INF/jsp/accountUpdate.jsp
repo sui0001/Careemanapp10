@@ -15,6 +15,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザー情報更新</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -22,12 +24,11 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
-
-        <%-- ページタイトルを表示 --%>
-        <h1>ユーザー情報更新</h1>
+    <div class="container">
+        <h1 class="blockTitle">ユーザー情報更新</h1>
 
         <%-- ユーザー情報を更新 --%>
-        <form action="/Careemanapp10/AccountInformation" method="post">
+        <form class="form" action="/Careemanapp10/AccountInformation" method="post">
             <table>
                 <tr>
                     <th>ユーザーネーム</th>
@@ -58,8 +59,10 @@
                     <td><input type="text" name="link_work_history" placeholder="<%= requestAccount.getLink_work_history() %>"></td>
                 </tr>
             </table>
-            <input type="submit" value="更新">
+			<button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
+            <input class="submitBotton" type="submit" value="更新">
         </form>
+    </div>
 
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

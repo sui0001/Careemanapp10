@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 
 import domain.Accounts;
 import dto.LoginDTO;
+import service.FindAccountService;
 import service.LoginService;
 
 
@@ -30,7 +31,24 @@ public class MainServlet extends HttpServlet {
 	// GETメソッド：メイン画面のmain.jspに遷移する
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
+        
+		// セッションスコープからの取得
+		HttpSession session = req.getSession();
+		// ユーザIDを取得
+		String user_id = (String) session.getAttribute("user_id");
+        String goal = (String) session.getAttribute("goal");
 
+		// ユーザIDを基にユーザー情報を取得
+		Accounts findAccount =
+			new Accounts(user_id, null, null, null, 0, goal, null, null);
+		FindAccountService findAccountService = new FindAccountService();
+		Accounts account = findAccountService.execute(findAccount);
+		System.out.println(account);
+
+		// ユーザー情報をリクエストスコープに保存
+		req.setAttribute("account", account);
+
+        // メイン画面のmain.jspに遷移
 		RequestDispatcher rs = req.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		rs.forward(req, res);
 	}
@@ -66,6 +84,7 @@ public class MainServlet extends HttpServlet {
             // ログイン成功時の処理：セッションスコープにユーザー名を保存してメイン画面のmain.jspに遷移する
             session.setAttribute("user_id", account.getUser_id());
             session.setAttribute("userName", account.getName());
+            session.setAttribute("goal", account.getGoal());
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
             rd.forward(req, res);
         } else {

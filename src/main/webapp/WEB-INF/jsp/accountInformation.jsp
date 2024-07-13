@@ -14,6 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザー情報</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -22,44 +24,44 @@
 
 	<%-- contents --%>
 
-        <%-- ページタイトルを表示する --%>
-        <h1>ユーザー情報</h1>
+        <h1 class="mainTitle">ユーザー情報</h1>
 
-        <%-- ユーザー情報を表示 --%>
-        <table>
-            <tr>
-                <th>ユーザーID</th>
-                <td><%= requestAccount.getUser_id() %></td>
-            </tr>
-            <tr>
-                <th>ユーザーネーム</th>
-                <td><%= requestAccount.getName() %></td>
-            </tr>
-            <tr>
-                <th>年齢</th>
-                <td><%= requestAccount.getAge() %></td>
-            </tr>
-            <tr>
-                <th>メール</th>
-                <td><%= requestAccount.getMail() %></td>
-            </tr>
-            <tr>
-                <th>目標</th>
-                <td><%= requestAccount.getGoal() %></td>
-            </tr>
-            <tr>
-                <th>履歴書</th>
-                <td><%= requestAccount.getLink_resume() %></td>
-            </tr>
-            <tr>
-                <th>職務経歴書</th>
-                <td><%= requestAccount.getLink_work_history() %></td>
-            </tr>
-        </table>
-        
-        <%-- ユーザー情報の更新画面へ遷移するボタン --%>
-		<p><button onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button></p>
-
+        <div class="conteiner">
+            <%-- ユーザー情報を表示 --%>
+            <table class="accountTable">
+                <tr>
+                    <th>ユーザーID</th>
+                    <td><%= requestAccount.getUser_id() %></td>
+                </tr>
+                <tr>
+                    <th>ユーザーネーム</th>
+                    <td><%= requestAccount.getName() %></td>
+                </tr>
+                <tr>
+                    <th>年齢</th>
+                    <td><%= requestAccount.getAge() %></td>
+                </tr>
+                <tr>
+                    <th>メール</th>
+                    <td><%= requestAccount.getMail() %></td>
+                </tr>
+                <tr>
+                    <th>目標</th>
+                    <td><%= requestAccount.getGoal() %></td>
+                </tr>
+                <tr>
+                    <th>履歴書</th>
+                    <td><%= requestAccount.getLink_resume() %></td>
+                </tr>
+                <tr>
+                    <th>職務経歴書</th>
+                    <td><%= requestAccount.getLink_work_history() %></td>
+                </tr>
+            </table>
+            
+            <%-- ユーザー情報の更新画面へ遷移するボタン --%>
+            <button class="accountUpdateBotton" onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button>
+        </div>
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>
 </body>

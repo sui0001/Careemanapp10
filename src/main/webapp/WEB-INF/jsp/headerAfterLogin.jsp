@@ -7,24 +7,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 <body>
-	<%-- タイトルを表示する
-	<h1>Careemanapp10</h1> --%>
+	<header>
+		<%-- ロゴ --%>
+		<div class=logo>
+			<a href="/Careemanapp10/main">
+				<%-- <img src="../../img/sample.jpeg" alt="ロゴ"> --%>
+				<h1>Careemanapp10</h1>
+			</a>
+		</div>
 
-    <%-- ロゴ --%>
-    <img src="logo.png" alt="ロゴ" width="100" height="100">
+		<%-- メニューバー --%>
+		<nav>
+			<ul class="headerNavi">
+				<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
+				<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
+				<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
+			</ul>
+		</nav>
 
-	<%-- メニューバー --%>
-	<nav>
-		<ul class="menu">
-			<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
-			<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
-			<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
+		<%-- ログアウトボタン --%>
+		<ul>
+			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/logout'">ログアウト</button></li>
 		</ul>
-	</nav>
-
-    <%-- ログアウトボタン --%>
-	<button onclick="location.href='/Careemanapp10/logout'">ログアウト</button>
+	</header>
 </body>
 </html>

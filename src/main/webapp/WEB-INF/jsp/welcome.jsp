@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ホーム</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -18,8 +20,8 @@
 	<%-- contents --%>
 
 		<h1>Careemanappへようこそ</h1>
-		<p><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
 		<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
+		<p><button onclick="location.href='/Careemanapp10/register'">新規登録画面へ</button></p>
 
 	<%-- footer --%>
 		<%@include file= "footerBeforeLogin.jsp" %>

@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ログアウト</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -16,8 +18,10 @@
 		<%@include file= "headerBeforeLogin.jsp" %>
 
 	<%-- contents --%>
-		<p>ログアウトしました</p>
-		<p><button onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
+		<h1 class="blockTitle">Careemanapp10</h1>
+		<p class="msg">ログアウトしました</p>
+		<p class="nextActionBotton"><button onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
+		<p class="otherLink"><a href="/Careemanapp10/login">ログイン画面へ</a></p>
 
 
 	<%-- footer --%>

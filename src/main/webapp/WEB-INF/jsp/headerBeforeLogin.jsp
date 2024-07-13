@@ -5,27 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 <body>
-	<%-- タイトルを表示する
-	<h1>Careemanapp10</h1> --%>
+	<header>
+		<%-- ロゴ --%>
+		<div class=logo>
+			<h1>Careemanapp10</h1>
+			<%-- <img src="../../img/sample.jpeg" alt="ロゴ"> --%>
+		</div>
 
-    <%-- ロゴ --%>
-    <img src="logo.png" alt="ロゴ" width="100" height="100">
-
-	<%-- メニューバー
-	<nav>
-		<ul class="menu">
-			<li><a href="/Careemanapp10/login">選考状況</a></li>
-			<li><a href="/Careemanapp10/login">企業比較</a></li>
-			<li><a href="/Careemanapp10/login">ユーザー情報</a></li>
+		<%-- ログインボタンと新規登録ボタン --%>
+		<ul class="headerBottonList">
+			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/login'">ログイン</button></li>
+			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/register'">新規登録</button></li>
 		</ul>
-	</nav> --%>
-
-    <%-- ログインボタンと新規登録ボタン --%>
-	<button onclick="location.href='/Careemanapp10/login'">ログイン</button>
-    <button onclick="location.href='/Careemanapp10/register'">新規登録</button>
-
-
+	</header>
 </body>
 </html>

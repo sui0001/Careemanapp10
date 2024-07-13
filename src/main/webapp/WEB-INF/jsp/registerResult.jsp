@@ -11,6 +11,8 @@
 <head>
 <meta charset="UTF-8">
 <title>新規登録結果</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -18,9 +20,8 @@
 		<%@include file= "headerBeforeLogin.jsp" %>
 
 	<%-- contents --%>
-
-        <p class="error" style="color: red;"><%= msg %></p>
-        <%-- <p><a href="/Careemanapp10/register">新規登録画面へ</a></p> --%>
+		<h1 class="blockTitle">Careemanapp10</h1>
+        <p class="msg"><%= msg %></p>
 		<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
         <p><a href="/Careemanapp10/welcome">ホームに戻る</a></p>
 

@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>企業登録</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -16,19 +18,19 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+    <div class="conteiner">
 
-        <%-- ページタイトルを表示する --%>
-        <h1>企業登録</h1>
+        <h1 class="blockTitle">企業登録</h1>
 
         <%-- 企業情報を登録する --%>
-        <form action="/Careemanapp10/CompanyList" method="post">
+        <form class="form" action="/Careemanapp10/CompanyList" method="post">
             <table>
                 <tr>
-                    <th>企業名：</th>
+                    <th>企業名</th>
                     <td><input type="text" name="company_name" placeholder="株式会社〇〇"></td>
                 </tr>
                 <tr>
-                    <th>応募媒体：</th>
+                    <th>応募媒体</th>
                     <td>
                         <select name="selection_application">
                             <option value="リクナビ">リクナビ</option>
@@ -51,7 +53,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>選考状況：</th>
+                    <th>選考状況</th>
                     <td>
                         <input type="radio" name="selection_status" value="応募" checked> 応募
                         <input type="radio" name="selection_status" value="タスク"> タスク
@@ -63,23 +65,23 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>日程：</th>
-                    <td><input type="text" name="selection_date" pattern="\d{2}/\d{2}" placeholder="mm/dd"></td>
+                    <th>日程</th>
+                    <td><input type="date" name="selection_date"></td>
                 </tr>
                 <tr>
-                    <th>選考フロー：</th>
+                    <th>選考フロー</th>
                     <td><input type="text" name="selection_flow" placeholder="書類選考・1次選考・2次選考・最終選考・内定など"></td>
                 </tr>
                 <tr>
-                    <th>HPリンク：</th>
+                    <th>HPリンク</th>
                     <td><input type="text" name="link_hp" placeholder="リンクを入力してください"></td>
                 </tr>
                 <tr>
-                    <th>口コミリンク：</th>
+                    <th>口コミリンク</th>
                     <td><input type="text" name="link_review" placeholder="リンクを入力してください"></td>
                 </tr>
                 <tr>
-                    <th>タスク：</th>
+                    <th>タスク</th>
                     <td>
                         <input type="checkbox" name="selection_tasks" value="返信"> 返信<br>
                         <input type="checkbox" name="selection_tasks" value="日程調整"> 日程調整<br>
@@ -91,24 +93,28 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>志望動機：</th>
+                    <th>志望動機</th>
                     <td><textarea name="selection_motivation" rows="5" cols="60"></textarea></td>
                 </tr>
                 <tr>
-                    <th>良い点：</th>
+                    <th>良い点</th>
                     <td><textarea name="positive_points" rows="5" cols="60"></textarea></td>
                 </tr>
                 <tr>
-                    <th>懸念点：</th>
+                    <th>懸念点</th>
                     <td><textarea name="negative_points" rows="5" cols="60"></textarea></td>
                 </tr>
                 <tr>
-                    <th>確認事項：</th>
+                    <th>確認事項</th>
                     <td><textarea name="points_to_confirm" rows="5" cols="60"></textarea></td>
                 </tr>
             </table>
-            <p><input type="submit" value="登録"></p>
+            <input class="submitBotton" type="submit" value="登録">
         </form>
+		
+        <button class="cancelBotton" onclick="location.href='/Careemanapp10/CompanyList'">キャンセル</button>
+
+    </div>
     
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

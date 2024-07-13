@@ -3,12 +3,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%-- リクエストスコープから取り出す処理 (必要ファイルのインポート忘れない) --%>
+<%@ page import="domain.*" %>
+<request.setCharacterEncoding("UTF-8"); %>
+<% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
 <title>メイン画面</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -21,8 +28,11 @@
 		<p>ようこそ <%= session.getAttribute("userName") %> さん</p>
 
 		<%-- 目標を表示する --%>
-		<p>目標</p>
-		<p>// ユーザーが登録した目標を表示するコードを記述</p>
+		<table>
+			<tr>
+				<th>目標</th>
+				<td><%= session.getAttribute("goal") %></td>
+			</tr>
 
 		<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
 		<p>1週間</p>

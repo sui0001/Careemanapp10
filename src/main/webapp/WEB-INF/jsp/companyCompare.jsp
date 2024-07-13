@@ -14,6 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>企業比較</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>

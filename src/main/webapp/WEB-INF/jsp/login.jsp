@@ -9,7 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン画面</title>
-<link rel="stylesheet" type="text/css" href="../trial/css/login.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -17,10 +18,11 @@
 		<%@include file= "headerBeforeLogin.jsp" %>
 
 	<%-- contents --%>
+    <div class="conteiner">
 
-        <h1>ログイン</h1>
+        <h1 class="blockTitle">ログイン</h1>
             
-        <form action="/Careemanapp10/main" method="post">
+        <form class="form" action="/Careemanapp10/main" method="post">
             <table>
                 <tr>
                     <th>メールアドレス</th>
@@ -31,14 +33,17 @@
                     <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
                 </tr>
             </table>
-            <p><input type="submit" value="ログイン"></p>
+            <input class="submitBotton" type="submit" value="ログイン">
         </form>
-
-        <a href="/Careemanapp10/welcome">ホームに戻る</a></p>
+        
+        <button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
+		
+        <p class="otherLink"><a href="/Careemanapp10/register">新規登録はこちら</a></p>
         
         <c:if test="${not empty loginError}">
             <p style="color: red;">${loginError}</p>
         </c:if>
+    </div>
 
 	<%-- footer --%>
 		<%@include file= "footerBeforeLogin.jsp" %>

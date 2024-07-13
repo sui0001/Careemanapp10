@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>就労条件登録</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -16,12 +18,12 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+    <div class="conteiner">
 
-        <%-- ページタイトルを表示 --%>
-        <h1>就労条件登録</h1>
+        <h1 class="blockTitle">就労条件登録</h1>
 
         <%-- 就労条件を登録する --%>
-        <form action="/Careemanapp10/RegisterCompanyDetail" method="post">
+        <form class="form" action="/Careemanapp10/RegisterCompanyDetail" method="post">
             <table>
                 <tr>
                     <th>経営状況</th>
@@ -335,8 +337,11 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="登録">
+            <input class="submitBotton" type="submit" value="登録">
         </form>
+        
+        <button class="cancelBotton" onclick="location.href='/Careemanapp10/company'">キャンセル</button>
+    </div>
 
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

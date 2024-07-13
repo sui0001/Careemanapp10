@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>新規登録画面</title>
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../Careemanapp10/css/style.css" />
 </head>
 
 <body>
@@ -16,9 +18,11 @@
 		<%@include file= "headerBeforeLogin.jsp" %>
 
 	<%-- contents --%>
+	<div class="conteiner">
 
-		<h1>新規登録</h1>
-		<form action="register" method="post">
+		<h1 class="blockTitle">新規登録</h1>
+
+		<form class="form" action="register" method="post">
 			<table>
 				<tr>
 					<th>ユーザーID</th>
@@ -53,10 +57,13 @@
 					<td><input type="text" name="link_work_history" placeholder="職務経歴書のリンクを入力"></td>
 				</tr>
 			</table>
-			<input type="submit" value="登録">
+			<input class="submitBotton" type="submit" value="登録">
 		</form>
+		
+		<button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
 
-		<p class="home"><a href="/Careemanapp10/welcome">ホームに戻る</a></p>
+		<p class="otherLink"><a href="/Careemanapp10/login">アカウントをお持ちの方はこちら</a></p>
+	</div>
 
 	<%-- footer --%>
 		<%@include file= "footerBeforeLogin.jsp" %>
