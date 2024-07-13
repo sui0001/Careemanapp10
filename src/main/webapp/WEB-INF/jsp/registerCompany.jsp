@@ -109,7 +109,7 @@
                     <td><textarea name="points_to_confirm" rows="5" cols="60"></textarea></td>
                 </tr>
             </table>
-            <input class="submitBotton" type="submit" value="登録">
+            <p class="submitBotton"><input type="submit" value="登録"></p>
         </form>
 		
         <button class="cancelBotton" onclick="location.href='/Careemanapp10/CompanyList'">キャンセル</button>

@@ -3,10 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%-- リクエストスコープから取り出す処理 (必要ファイルのインポート忘れない) --%>
-<%@ page import="domain.*" %>
-<request.setCharacterEncoding("UTF-8"); %>
-<% Accounts requestAccount = (Accounts)request.getAttribute("account"); %>
 
 <!DOCTYPE html>
 <html>
@@ -23,9 +19,10 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+	<div class="conteiner">
 
 		<%-- ユーザー名を表示する --%>
-		<p>ようこそ <%= session.getAttribute("userName") %> さん</p>
+		<p class="welcome">ようこそ <%= session.getAttribute("userName") %> さん</p>
 
 		<%-- 目標を表示する --%>
 		<table>
@@ -33,10 +30,11 @@
 				<th>目標</th>
 				<td><%= session.getAttribute("goal") %></td>
 			</tr>
+		</table>
 
 		<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
-		<p>1週間</p>
-		<p>// カレンダーを表示するコードを記述</p>
+		<p class="calendar">// カレンダーを表示するコードを記述</p>
+	</div>
 
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

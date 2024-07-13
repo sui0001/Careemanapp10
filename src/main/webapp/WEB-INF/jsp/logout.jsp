@@ -18,11 +18,12 @@
 		<%@include file= "headerBeforeLogin.jsp" %>
 
 	<%-- contents --%>
+	<div class="conteiner">
 		<h1 class="blockTitle">Careemanapp10</h1>
 		<p class="msg">ログアウトしました</p>
 		<p class="nextActionBotton"><button onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
 		<p class="otherLink"><a href="/Careemanapp10/login">ログイン画面へ</a></p>
-
+	</div>
 
 	<%-- footer --%>
 		<%@include file= "footerBeforeLogin.jsp" %>

@@ -24,7 +24,7 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
-    <div class="container">
+    <div class="conteiner">
         <h1 class="blockTitle">ユーザー情報更新</h1>
 
         <%-- ユーザー情報を更新 --%>
@@ -60,7 +60,7 @@
                 </tr>
             </table>
 			<button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
-            <input class="submitBotton" type="submit" value="更新">
+            <p class="submitBotton"><input type="submit" value="更新"></p>
         </form>
     </div>
 

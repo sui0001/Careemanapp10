@@ -32,7 +32,7 @@ public class AccountsDAO {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
             
             // SELECT文を準備
-            String sql = "SELECT user_id, pass, mail, name, age FROM accounts WHERE mail = ? AND pass = ?";
+            String sql = "SELECT * FROM accounts WHERE mail = ? AND pass = ?";
             PreparedStatement pStmt = conn.prepareStatement(sql);
 			// 1番目のプレースホルダにmailをセット
             pStmt.setString(1, login.getMail());
@@ -50,9 +50,13 @@ public class AccountsDAO {
                 String mail = rs.getString("mail");
                 String name = rs.getString("name");
                 int age = rs.getInt("age");
+				String goal = rs.getString("goal");
+				String link_resume = rs.getString("link_resume");
+				String link_work_history = rs.getString("link_work_history");
 
-             // 一致したユーザーが存在した場合、そのユーザーを表すAccountsインスタンスを生成
-                accounts = new Accounts(user_id, pass, mail, name, age);
+			// 一致したユーザーが存在した場合、そのユーザーを表すAccountsインスタンスを生成
+			accounts = new Accounts(user_id, pass, mail, name, age, goal, link_resume, link_work_history);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

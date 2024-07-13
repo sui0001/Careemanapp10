@@ -212,7 +212,7 @@
                     <th>年収</th>
                     <td>
                         <input type="text" name="annual_salary_lower">万円～
-                        <input type="text" name="annual_salary_upper">
+                        <input type="text" name="annual_salary_upper">万円
                     </td>
                 </tr>
                 <tr>
@@ -337,7 +337,7 @@
                     </td>
                 </tr>
             </table>
-            <input class="submitBotton" type="submit" value="登録">
+            <p class="submitBotton"><input type="submit" value="登録"></p>
         </form>
         
         <button class="cancelBotton" onclick="location.href='/Careemanapp10/company'">キャンセル</button>
