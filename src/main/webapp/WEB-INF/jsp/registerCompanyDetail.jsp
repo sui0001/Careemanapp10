@@ -150,8 +150,8 @@
                 <tr>
                     <th>休憩時間の指定</th>
                     <td>
-                        <input type="radio" name="break_time_rule" value="1">有
-                        <input type="radio" name="break_time_rule" value="0">無
+                        <input type="radio" name="break_time_rule" value="有">有
+                        <input type="radio" name="break_time_rule" value="無">無
                     </td>
                 </tr>
                 <tr>
@@ -193,11 +193,11 @@
                 <tr>
                     <th>休暇</th>
                     <td>
-                        <input type="checkbox" name="other_holidays" value="GW">GW
-                        <input type="checkbox" name="other_holidays" value="夏季休暇">夏季休暇
-                        <input type="checkbox" name="other_holidays" value="冬期休暇">冬期休暇
-                        <input type="checkbox" name="other_holidays" value="年末年始休暇">年末年始休暇
-                        <input type="checkbox" name="other_holidays" value="慶弔休暇">慶弔休暇
+                        <input type="checkbox" name="other_holiday" value="GW">GW
+                        <input type="checkbox" name="other_holiday" value="夏季休暇">夏季休暇
+                        <input type="checkbox" name="other_holiday" value="冬期休暇">冬期休暇
+                        <input type="checkbox" name="other_holiday" value="年末年始休暇">年末年始休暇
+                        <input type="checkbox" name="other_holiday" value="慶弔休暇">慶弔休暇
                     </td>
                 </tr>
                 <tr>
@@ -253,43 +253,43 @@
                 <tr>
                     <th>通勤手当</th>
                     <td>
-                        <input type="radio" name="commuting_allowance" value="1">有
-                        <input type="radio" name="commuting_allowance" value="0">無
+                        <input type="radio" name="commuting_allowance" value="有">有
+                        <input type="radio" name="commuting_allowance" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>住宅手当</th>
                     <td>
-                        <input type="radio" name="housing_allowance" value="1">有
-                        <input type="radio" name="housing_allowance" value="0">無
+                        <input type="radio" name="housing_allowance" value="有">有
+                        <input type="radio" name="housing_allowance" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>資格補助</th>
                     <td>
-                        <input type="radio" name="qualification_support" value="1">有
-                        <input type="radio" name="qualification_support" value="0">無
+                        <input type="radio" name="qualification_support" value="有">有
+                        <input type="radio" name="qualification_support" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>資格手当</th>
                     <td>
-                        <input type="radio" name="qualification_allowance" value="1">有
-                        <input type="radio" name="qualification_allowance" value="0">無
+                        <input type="radio" name="qualification_allowance" value="有">有
+                        <input type="radio" name="qualification_allowance" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>その他手当</th>
                     <td>
-                        <input type="radio" name="other_allowances" value="1">有
-                        <input type="radio" name="other_allowances" value="0">無
+                        <input type="radio" name="other_allowances" value="有">有
+                        <input type="radio" name="other_allowances" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>賞与</th>
                     <td>
-                        <input type="radio" name="bonus" value="1">有
-                        <input type="radio" name="bonus" value="0">無
+                        <input type="radio" name="bonus" value="有">有
+                        <input type="radio" name="bonus" value="無">無
                     </td>
                 </tr>
                 <tr>
@@ -323,15 +323,15 @@
                 <tr>
                     <th>試用期間中の変更</th>
                     <td>
-                        <input type="radio" name="probation_period_changes" value="1">有
-                        <input type="radio" name="probation_period_changes" value="0">無
+                        <input type="radio" name="probation_period_changes" value="有">有
+                        <input type="radio" name="probation_period_changes" value="無">無
                     </td>
                 </tr>
                 <tr>
                     <th>退職金</th>
                     <td>
-                        <input type="radio" name="retirement_benefits" value="1">有
-                        <input type="radio" name="retirement_benefits" value="0">無
+                        <input type="radio" name="retirement_benefits" value="有">有
+                        <input type="radio" name="retirement_benefits" value="無">無
                     </td>
                 </tr>
             </table>

@@ -67,8 +67,8 @@ public class CompanyServlet extends HttpServlet {
 			// 3.企業IDを基に企業詳細情報を取得
 			CompanyDetailDTO findCompanyDetail =
 				new CompanyDetailDTO(company_id, 0, null, null, null,
-					null, null, null, 0, 0, 0, 0, 0, null, null, null, null,
-						0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, 0, 0);
+					null, null, null, 0, 0, null, 0, 0, null, null, null, null,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
 			FindCompanyDetailService findCompanyDetailService = new FindCompanyDetailService();
 			CompanyDetailDTO details = findCompanyDetailService.execute(findCompanyDetail);
 			System.out.println(details);

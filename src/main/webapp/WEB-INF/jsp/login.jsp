@@ -31,7 +31,7 @@
                     <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
                 </tr>
             </table>
-            <p><button type="submit">ログイン</button></p>
+            <p><input type="submit" value="ログイン"></p>
         </form>
 
         <a href="/Careemanapp10/welcome">ホームに戻る</a></p>

@@ -17,7 +17,8 @@
 
 	<%-- contents --%>
 		<p>ログアウトしました</p>
-		<p><a href="/Careemanapp10/welcome">ホームに戻る</a></p>
+		<p><button onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
+
 
 	<%-- footer --%>
 		<%@include file= "footerBeforeLogin.jsp" %>

@@ -52,14 +52,14 @@ public class RegisterCompanyDetailServlet extends HttpServlet {
 		String working_hours = req.getParameter("working_hours"); // 就業時間
 		int standard_working_hours = Integer.parseInt(req.getParameter("standard_working_hours")); // 所定労働時間
 		int break_time = Integer.parseInt(req.getParameter("break_time")); // 休憩時間
-		int break_time_rule = Integer.parseInt(req.getParameter("break_time_rule")); // 休憩時間の指定
+		String break_time_rule = req.getParameter("break_time_rule"); // 休憩時間の指定
 		int average_overtime_hours = Integer.parseInt(req.getParameter("average_overtime_hours")); // 平均残業時間
 		int annual_holidays = Integer.parseInt(req.getParameter("annual_holidays")); // 年間休日数
 		String holiday_type = req.getParameter("holiday_type"); // 休日形態
 		String paid_holidays = req.getParameter("paid_holidays"); // 有給休暇
-		String[] other_holidays = req.getParameterValues("other_holidays"); // 休暇
+		String[] other_holiday = req.getParameterValues("other_holiday"); // 休暇
 			// チェックボックスの値を「, 」区切りで1つの文字列に変更する
-			String other_holidays_str = String.join(", ", other_holidays);
+			String other_holidays = String.join(", ", other_holiday);
 		String holiday_notes = req.getParameter("holiday_notes"); // 休暇メモ
 		int annual_salary_upper = Integer.parseInt(req.getParameter("annual_salary_upper")); // 年収上限
 		int annual_salary_lower = Integer.parseInt(req.getParameter("annual_salary_lower")); // 年収下限
@@ -70,23 +70,23 @@ public class RegisterCompanyDetailServlet extends HttpServlet {
 		int fixed_overtime_pay_upper = Integer.parseInt(req.getParameter("fixed_overtime_pay_upper")); // 固定残業代上限
 		int fixed_overtime_pay_lower = Integer.parseInt(req.getParameter("fixed_overtime_pay_lower")); // 固定残業代下限
 		int fixed_overtime_hours = Integer.parseInt(req.getParameter("fixed_overtime_hours")); // 固定残業時間
-		int commuting_allowance = Integer.parseInt(req.getParameter("commuting_allowance")); // 通勤手当
-		int housing_allowance = Integer.parseInt(req.getParameter("housing_allowance")); // 住宅手当
-		int qualification_support = Integer.parseInt(req.getParameter("qualification_support")); // 資格補助
-		int qualification_allowance = Integer.parseInt(req.getParameter("qualification_allowance")); // 資格手当
-		int other_allowances = Integer.parseInt(req.getParameter("other_allowances")); // その他手当
-		int bonus = Integer.parseInt(req.getParameter("bonus")); // 賞与
+		String commuting_allowance = req.getParameter("commuting_allowance"); // 通勤手当
+		String housing_allowance = req.getParameter("housing_allowance"); // 住宅手当
+		String qualification_support = req.getParameter("qualification_support"); // 資格補助
+		String qualification_allowance = req.getParameter("qualification_allowance"); // 資格手当
+		String other_allowances = req.getParameter("other_allowances"); // その他手当
+		String bonus = req.getParameter("bonus"); // 賞与
 		String bonus_record = req.getParameter("bonus_record"); // 賞与実績
 		String social_insurance = req.getParameter("social_insurance"); // 社会保険
 		String probation_period = req.getParameter("probation_period"); // 試用期間
-		int probation_period_changes = Integer.parseInt(req.getParameter("probation_period_changes")); // 試用期間中の変更
-		int retirement_benefits = Integer.parseInt(req.getParameter("retirement_benefits")); // 退職金
+		String probation_period_changes = req.getParameter("probation_period_changes"); // 試用期間中の変更
+		String retirement_benefits = req.getParameter("retirement_benefits"); // 退職金
 
 		// 面接情報をCompanyDetailDTOインスタンスに格納
 		CompanyDetailDTO newCompanyDetail =
 			new CompanyDetailDTO(company_id, company_detail_id, management_status, business_content, job_description,
 				work_location, remote_work, working_hours, standard_working_hours, break_time, break_time_rule,
-					average_overtime_hours, annual_holidays, holiday_type, paid_holidays, other_holidays_str,
+					average_overtime_hours, annual_holidays, holiday_type, paid_holidays, other_holidays,
 						holiday_notes, annual_salary_upper, annual_salary_lower, monthly_salary_upper, monthly_salary_lower,
 							basic_salary_upper, basic_salary_lower, fixed_overtime_pay_upper, fixed_overtime_pay_lower,
 								fixed_overtime_hours, commuting_allowance, housing_allowance, qualification_support,

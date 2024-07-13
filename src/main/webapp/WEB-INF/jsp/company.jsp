@@ -116,9 +116,8 @@
 		<% } %>
 
 		<%-- 面接情報を登録するボタン --%>
-		<form action="/Careemanapp10/RegisterInterview" method="get">
-			<input type="submit" value="面接登録">
-		</form>
+		<p><button onclick="location.href='/Careemanapp10/RegisterInterview'">面接登録</button></p>
+
 		<br>
 
 		<hr>
@@ -266,9 +265,7 @@
 		<% }else{ %>
 			<p>企業詳細情報は未登録です。</p>
 			<%-- 企業詳細を登録するボタン --%>
-			<form action="/Careemanapp10/RegisterCompanyDetail" method="get">
-				<input type="submit" value="企業詳細登録">
-			</form>
+			<p><button onclick="location.href='/Careemanapp10/RegisterCompanyDetail'">企業詳細登録</button></p>
 		<% } %>
 
 	<%-- footer --%>

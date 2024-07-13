@@ -58,10 +58,8 @@
         </table>
         
         <%-- ユーザー情報の更新画面へ遷移するボタン --%>
-        <form action="/Careemanapp10/AccountUpdate" method="get">
-            <input type="submit" value="更新する">
-        </form>
-    
+		<p><button onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button></p>
+
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>
 </body>

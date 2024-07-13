@@ -52,7 +52,7 @@
 
             <% for (CompanyDTO company : requestCompanyList) { %>
                 <tr>
-                    <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %>
+                    <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %> <%-- 企業IDを遷移時に使えるようにする --%>
                     <td><a href=<%= url %>><%= company.getCompany_name() %></a></td>
                     <td><%= company.getSelection_application() %></td>
                     <td><%= company.getSelection_status() %></td>

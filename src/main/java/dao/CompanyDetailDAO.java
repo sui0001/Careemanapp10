@@ -48,7 +48,7 @@ public class CompanyDetailDAO {
                 String working_hours = rs.getString("working_hours"); // 就業時間
                 int standard_working_hours = rs.getInt("standard_working_hours"); // 所定労働時間
                 int break_time = rs.getInt("break_time"); // 休憩時間
-                int break_time_rule = rs.getInt("break_time_rule"); // 休憩時間の指定
+                String break_time_rule = rs.getString("break_time_rule"); // 休憩時間の指定
                 int average_overtime_hours = rs.getInt("average_overtime_hours"); // 平均残業時間
                 int annual_holidays = rs.getInt("annual_holidays"); // 年間休日数
                 String holiday_type = rs.getString("holiday_type"); // 休日形態
@@ -64,17 +64,17 @@ public class CompanyDetailDAO {
                 int fixed_overtime_pay_upper = rs.getInt("fixed_overtime_pay_upper"); // 固定残業代上限
                 int fixed_overtime_pay_lower = rs.getInt("fixed_overtime_pay_lower"); // 固定残業代下限
                 int fixed_overtime_hours = rs.getInt("fixed_overtime_hours"); // 固定残業時間
-                int commuting_allowance = rs.getInt("commuting_allowance"); // 通勤手当
-                int housing_allowance = rs.getInt("housing_allowance"); // 住宅手当
-                int qualification_support = rs.getInt("qualification_support"); // 資格補助
-                int qualification_allowance = rs.getInt("qualification_allowance"); // 資格手当
-                int other_allowances = rs.getInt("other_allowances"); // その他手当
-                int bonus = rs.getInt("bonus"); // 賞与
+                String commuting_allowance = rs.getString("commuting_allowance"); // 通勤手当
+                String housing_allowance = rs.getString("housing_allowance"); // 住宅手当
+                String qualification_support = rs.getString("qualification_support"); // 資格補助
+                String qualification_allowance = rs.getString("qualification_allowance"); // 資格手当
+                String other_allowances = rs.getString("other_allowances"); // その他手当
+                String bonus = rs.getString("bonus"); // 賞与
                 String bonus_record = rs.getString("bonus_record"); // 賞与実績
                 String social_insurance = rs.getString("social_insurance"); // 社会保険
                 String probation_period = rs.getString("probation_period"); // 試用期間
-                int probation_period_changes = rs.getInt("probation_period_changes"); // 試用期間中の変更
-                int retirement_benefits = rs.getInt("retirement_benefits"); // 退職金
+                String probation_period_changes = rs.getString("probation_period_changes"); // 試用期間中の変更
+                String retirement_benefits = rs.getString("retirement_benefits"); // 退職金
 
                 // 一致した企業詳細が存在した場合、その企業詳細を表すcompanyDetailDTOインスタンスを生成
                 companyDetail =
@@ -113,7 +113,7 @@ public class CompanyDetailDAO {
             pStmt.setString(7, newCompanyDetail.getWorking_hours()); // 就業時間
             pStmt.setInt(8, newCompanyDetail.getStandard_working_hours()); // 所定労働時間
             pStmt.setInt(9, newCompanyDetail.getBreak_time()); // 休憩時間
-            pStmt.setInt(10, newCompanyDetail.getBreak_time_rule()); // 休憩時間の指定
+            pStmt.setString(10, newCompanyDetail.getBreak_time_rule()); // 休憩時間の指定
             pStmt.setInt(11, newCompanyDetail.getAverage_overtime_hours()); // 平均残業時間
             pStmt.setInt(12, newCompanyDetail.getAnnual_holidays()); // 年間休日数
             pStmt.setString(13, newCompanyDetail.getHoliday_type()); // 休日形態
@@ -129,17 +129,17 @@ public class CompanyDetailDAO {
             pStmt.setInt(23, newCompanyDetail.getFixed_overtime_pay_upper()); // 固定残業代上限
             pStmt.setInt(24, newCompanyDetail.getFixed_overtime_pay_lower()); // 固定残業代下限
             pStmt.setInt(25, newCompanyDetail.getFixed_overtime_hours()); // 固定残業時間
-            pStmt.setInt(26, newCompanyDetail.getCommuting_allowance()); // 通勤手当
-            pStmt.setInt(27, newCompanyDetail.getHousing_allowance()); // 住宅手当
-            pStmt.setInt(28, newCompanyDetail.getQualification_support()); // 資格補助
-            pStmt.setInt(29, newCompanyDetail.getQualification_allowance()); // 資格手当
-            pStmt.setInt(30, newCompanyDetail.getOther_allowances()); // その他手当
-            pStmt.setInt(31, newCompanyDetail.getBonus()); // 賞与
+            pStmt.setString(26, newCompanyDetail.getCommuting_allowance()); // 通勤手当
+            pStmt.setString(27, newCompanyDetail.getHousing_allowance()); // 住宅手当
+            pStmt.setString(28, newCompanyDetail.getQualification_support()); // 資格補助
+            pStmt.setString(29, newCompanyDetail.getQualification_allowance()); // 資格手当
+            pStmt.setString(30, newCompanyDetail.getOther_allowances()); // その他手当
+            pStmt.setString(31, newCompanyDetail.getBonus()); // 賞与
             pStmt.setString(32, newCompanyDetail.getBonus_record()); // 賞与実績
             pStmt.setString(33, newCompanyDetail.getSocial_insurance()); // 社会保険
             pStmt.setString(34, newCompanyDetail.getProbation_period()); // 試用期間
-            pStmt.setInt(35, newCompanyDetail.getProbation_period_changes()); // 試用期間中の変更
-            pStmt.setInt(36, newCompanyDetail.getRetirement_benefits()); // 退職金
+            pStmt.setString(35, newCompanyDetail.getProbation_period_changes()); // 試用期間中の変更
+            pStmt.setString(36, newCompanyDetail.getRetirement_benefits()); // 退職金
 
             // INSERT文を実行
             int result = pStmt.executeUpdate();
