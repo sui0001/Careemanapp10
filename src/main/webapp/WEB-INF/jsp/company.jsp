@@ -28,10 +28,10 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+	<div class="conteiner">
 
-		<h1 class="mainTitle"><%=requestCompany.getCompany_name()%></h1>
+		<h1 class="blockTitle"><%=requestCompany.getCompany_name()%></h1>
 
-		<div class="conteiner">
 			<%-- 企業情報(単体)を表示する --%>
 			<h2 class="subTitle">企業情報</h2>
 				<table class="companyTable">
@@ -265,7 +265,7 @@
 					<%-- 企業詳細を登録するボタン --%>
 					<button class="registerDetailBotton" onclick="location.href='/Careemanapp10/RegisterCompanyDetail'">企業詳細登録</button></p>
 				<% } %>
-		</div>
+	</div>
 
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

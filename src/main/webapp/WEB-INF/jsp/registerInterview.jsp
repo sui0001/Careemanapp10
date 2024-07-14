@@ -18,7 +18,6 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
-
     <div class="conteiner">
 
         <h1 class="blockTitle">面接登録</h1>

@@ -26,13 +26,12 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+    <div class="conteiner">
 
-        <h1 class="mainTitle">選考状況</h1>
+        <h1 class="blockTitle">選考状況</h1>
         
         <%-- 企業登録画面へ遷移するボタン --%>
         <button class="registerCompanyBotton" onclick="location.href='/Careemanapp10/RegisterCompany'">企業登録</button>
-
-        <div class="conteinerWide">
 
             <%-- 企業リストを表示する --%>
             <table class="companyListTable">
@@ -69,7 +68,7 @@
                     </tr>
                 <% } %>
             </table>
-        </div>
+    </div>
 
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

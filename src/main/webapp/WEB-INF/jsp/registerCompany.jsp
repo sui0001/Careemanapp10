@@ -59,8 +59,11 @@
                         <input type="radio" name="selection_status" value="タスク"> タスク
                         <input type="radio" name="selection_status" value="日程調整中"> 日程調整中
                         <input type="radio" name="selection_status" value="面接予定"> 面接予定
-                        <input type="radio" name="selection_status" value="最終面接予定"> 最終面接予定
+                        <input type="radio" name="selection_status" value="最終面接予定"> 最終面接予定<br>
                         <input type="radio" name="selection_status" value="結果待ち"> 結果待ち
+                        <input type="radio" name="selection_status" value="内定"> 内定
+                        <input type="radio" name="selection_status" value="内定"> 内々定
+                        <input type="radio" name="selection_status" value="内定"> 内定辞退
                         <input type="radio" name="selection_status" value="選考終了"> 選考終了
                     </td>
                 </tr>
@@ -83,13 +86,13 @@
                 <tr>
                     <th>タスク</th>
                     <td>
-                        <input type="checkbox" name="selection_tasks" value="返信"> 返信<br>
-                        <input type="checkbox" name="selection_tasks" value="日程調整"> 日程調整<br>
-                        <input type="checkbox" name="selection_tasks" value="書類送付"> 書類送付<br>
+                        <input type="checkbox" name="selection_tasks" value="返信"> 返信
+                        <input type="checkbox" name="selection_tasks" value="日程調整"> 日程調整
+                        <input type="checkbox" name="selection_tasks" value="書類送付"> 書類送付
                         <input type="checkbox" name="selection_tasks" value="テスト受験"> テスト受験<br>
-                        <input type="checkbox" name="selection_tasks" value="完了報告 (エージェント)"> 完了報告 (エージェント)<br>
-                        <input type="checkbox" name="selection_tasks" value="面接後アンケート (エージェント)"> 面接後アンケート (エージェント)<br>
-                        <input type="checkbox" name="selection_tasks" value="その他"> その他<br>
+                        <input type="checkbox" name="selection_tasks" value="完了報告 (エージェント)"> 完了報告
+                        <input type="checkbox" name="selection_tasks" value="面接後アンケート (エージェント)"> 面接後アンケート
+                        <input type="checkbox" name="selection_tasks" value="その他"> その他
                     </td>
                 </tr>
                 <tr>

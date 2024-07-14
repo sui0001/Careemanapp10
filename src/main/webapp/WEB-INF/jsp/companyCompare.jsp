@@ -23,9 +23,9 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
-
+    <div class="conteiner">
         <%-- ページタイトルを表示する --%>
-        <div class="title">
+        <div class="blockTitle">
             <h1>企業比較</h1>
         </div>
 
@@ -33,7 +33,8 @@
         <div class="comCompareTable">
             // 企業比較用のテーブルを作成
         </div>
-
+    </div>
+    
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>
 </body>

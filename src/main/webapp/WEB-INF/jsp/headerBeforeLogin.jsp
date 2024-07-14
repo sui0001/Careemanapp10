@@ -18,8 +18,8 @@
 
 		<%-- ログインボタンと新規登録ボタン --%>
 		<ul class="headerBottonList">
-			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/login'">ログイン</button></li>
-			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/register'">新規登録</button></li>
+			<li><a href="/Careemanapp10/login" class="headerBotton">ログイン</a></li>
+			<li><a href="/Careemanapp10/register" class="headerBotton" >新規登録</a></li>
 		</ul>
 	</header>
 </body>

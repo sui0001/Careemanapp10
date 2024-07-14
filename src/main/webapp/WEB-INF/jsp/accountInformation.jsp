@@ -23,10 +23,10 @@
 		<%@include file= "headerAfterLogin.jsp" %>
 
 	<%-- contents --%>
+    <div class="conteiner">
 
-        <h1 class="mainTitle">ユーザー情報</h1>
+        <h1 class="blockTitle">ユーザー情報</h1>
 
-        <div class="conteiner">
             <%-- ユーザー情報を表示 --%>
             <table class="accountTable">
                 <tr>
@@ -64,7 +64,7 @@
 
             <%-- ユーザー情報の更新画面へ遷移するボタン --%>
             <button class="accountUpdateBotton" onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button></p>
-        </div>
+    </div>
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>
 </body>

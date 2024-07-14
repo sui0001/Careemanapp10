@@ -13,8 +13,8 @@
 <body>
 	<header>
 		<%-- ロゴ --%>
-		<div class=logo>
-			<a href="/Careemanapp10/main">
+		<div class="logo">
+			<a href="/Careemanapp10/main" class="logo">
 				<%-- <img src="../../img/sample.jpeg" alt="ロゴ"> --%>
 				<h1>Careemanapp10</h1>
 			</a>
@@ -26,13 +26,11 @@
 				<li><a href="/Careemanapp10/CompanyList">選考状況</a></li>
 				<li><a href="/Careemanapp10/CompanyCompare">企業比較</a></li>
 				<li><a href="/Careemanapp10/AccountInformation">ユーザー情報</a></li>
+				<%-- ログアウトボタン --%>
+				<li><a href="/Careemanapp10/logout" class="headerBotton">ログアウト</a></li>
 			</ul>
 		</nav>
 
-		<%-- ログアウトボタン --%>
-		<ul>
-			<li><button class="headerBotton" onclick="location.href='/Careemanapp10/logout'">ログアウト</button></li>
-		</ul>
 	</header>
 </body>
 </html>

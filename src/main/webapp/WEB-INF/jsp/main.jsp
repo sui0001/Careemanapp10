@@ -21,16 +21,18 @@
 	<%-- contents --%>
 	<div class="conteiner">
 
+		<h1 class="blockTitle">Careemanapp10</h1>
+
+
 		<%-- ユーザー名を表示する --%>
 		<p class="welcome">ようこそ <%= session.getAttribute("userName") %> さん</p>
 
 		<%-- 目標を表示する --%>
-		<table>
-			<tr>
-				<th>目標</th>
-				<td><%= session.getAttribute("goal") %></td>
-			</tr>
-		</table>
+			<% if (session.getAttribute("goal") == null) { %>
+				<p class="goal">目標は未設定です。</p>
+			<% } else { %>
+				<p class="goal"><%= session.getAttribute("goal") %></p>
+			<% } %>
 
 		<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
 		<p class="calendar">// カレンダーを表示するコードを記述</p>
