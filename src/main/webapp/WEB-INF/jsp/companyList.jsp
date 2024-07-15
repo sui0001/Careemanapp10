@@ -31,7 +31,8 @@
         <h1 class="blockTitle">選考状況</h1>
         
         <%-- 企業登録画面へ遷移するボタン --%>
-        <a href="/Careemanapp10/RegisterCompany" class="registerCompanyButton">企業登録</a>
+		<p><button class="registerCompanyButton" onclick="location.href='/Careemanapp10/RegisterCompany'">企業登録</button></p>
+
 
             <%-- 企業リストを表示する --%>
             <table class="companyListTable">

@@ -57,7 +57,8 @@
             <input  class="submitButton" type="submit" value="登録">
         </form>
 
-        <a href="/Careemanapp10/company" class="cancelButton">キャンセル</a>
+		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/company'">キャンセル</button></p> --%>
+
     </div>
 
 	<%-- footer --%>

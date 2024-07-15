@@ -40,9 +40,9 @@
             <input class="submitButton" type="submit" value="ログイン">
         </form>
         
-        <%-- <a href="/Careemanapp10/welcome"  class="cancelButton" >キャンセル</a> --%>
-		
-        <a href="/Careemanapp10/register" class="otherLink">新規登録はこちら</a>
+		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button></p> --%>
+		<p><button class="otherLink" onclick="location.href='/Careemanapp10/register'">新規登録はこちら</button></p>
+
         
     </div>
 

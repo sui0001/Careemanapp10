@@ -17,7 +17,7 @@
 		</div>
 
 		<%-- ログインボタンと新規登録ボタン --%>
-		<ul class="headerBottonList">
+		<ul class="headerNavi">
 			<li><a href="/Careemanapp10/login" class="headerBotton">ログイン</a></li>
 			<li><a href="/Careemanapp10/register" class="headerBotton" >新規登録</a></li>
 		</ul>

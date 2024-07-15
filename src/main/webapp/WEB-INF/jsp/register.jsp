@@ -59,10 +59,10 @@
 			</table>
 			<p class="submitButton"><input type="submit" value="登録"></p>
 		</form>
-		
-		<%-- <a href="/Careemanapp10/welcome" class="cancelButton">キャンセル</a> --%>
 
-		<a href="/Careemanapp10/login" class="otherLink">アカウントをお持ちの方はこちら</a>
+		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button></p> --%>
+		<p><button class="otherLink" onclick="location.href='/Careemanapp10/login'">アカウントをお持ちの方はこちら</button></p>
+
 	</div>
 
 	<%-- footer --%>

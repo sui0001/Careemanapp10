@@ -115,7 +115,7 @@
 				<% } %>
 
 			<%-- 面接情報を登録するボタン --%>
-			<a href="/Careemanapp10/RegisterInterview" class="registerInterviewButton">面接登録</a>
+			<p><button class="registerInterviewButton" onclick="location.href='/Careemanapp10/RegisterInterview'">面接登録</button></p>
 
 			<hr>
 
@@ -263,7 +263,7 @@
 				<% }else{ %>
 					<p>企業詳細情報は未登録です。</p>
 					<%-- 企業詳細を登録するボタン --%>
-					<a href="/Careemanapp10/RegisterCompanyDetail" class="registerDetailButton">企業詳細登録</a>
+					<p><button class="registerDetailButton" onclick="location.href='/Careemanapp10/RegisterCompanyDetail'">企業詳細登録</button></p>
 				<% } %>
 	</div>
 
