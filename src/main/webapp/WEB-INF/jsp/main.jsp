@@ -21,7 +21,7 @@
 	<%-- contents --%>
 	<div class="conteiner">
 
-		<h1 class="blockTitle">Careemanapp10</h1>
+		<div class="mainPageTitle"><h1 class="blockTitle">Careemanapp10</h1></div>
 
 
 		<%-- ユーザー名を表示する --%>
@@ -36,6 +36,14 @@
 
 		<%-- カレンダーを表示する(タスクを表示できるようにしたい) --%>
 		<p class="calendar">// カレンダーを表示するコードを記述</p>
+
+		<%-- アクション用ボタン --%>
+			<ul class="mainActionButtonList">
+				<li><button class="mainActionButton" onclick="location.href='/Careemanapp10/CompanyList'"><span class="titleBorder">選考状況をみる</span></button></li>
+				<li><button class="mainActionButton" onclick="location.href='/Careemanapp10/CompanyCompare'"><span class="titleBorder">企業を比較する</span></button></li>
+				<li><button class="mainActionButton" onclick="location.href='/Careemanapp10/RegisterCompany'"><span class="titleBorder">企業を追加する</span></button></li>
+				<li><button class="mainActionButton" onclick="location.href='/Careemanapp10/AccountInformation'"><span class="titleBorder">ユーザー情報をみる</span></button></li>
+			</ul>
 	</div>
 
 	<%-- footer --%>

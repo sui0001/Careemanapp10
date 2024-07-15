@@ -149,18 +149,22 @@ body {
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
     }
+
+    .mainPageTitle{
+        font-family: 'Sacramento', cursive;
+    }
     
-    .blockTitle{
+    .blockTitle, .TitleAndButton{
         /* レイアウト */
         margin-bottom: 28px;
         /* テキストのレイアウト */
         /* 配色・文字の大きさなど */
         font-size: 32px;
         font-weight: bold;
-        border-bottom: solid 6px #0c5fb8;
+        border-bottom: solid 6px #75AABF;
     }
     
-    .subTitle{
+    .subTitle, .subTitleAndButton{
         /* レイアウト */
         margin-left: 80px;
         margin-right: 80px;
@@ -171,9 +175,9 @@ body {
         font-size: 24px;
         font-weight: bold;
         color: #485d59;
-        border-bottom: solid 1px #c0c1c1;
+        border-bottom: solid 2px #c0c1c1;
     }
-    
+
     .otherLink{
         /* 配色・文字の大きさなど */
         font-size: 16px;
@@ -221,17 +225,17 @@ body {
     body : button
     ---------------------------------------------------------- */
     button{
-        /* 配色・文字の大きさなど */
         margin-top: 10px;
         margin-bottom: 3px;
-        padding: 0.2em 0.4em;
-        border: solid 1px #c0c1c1;
-        text-decoration: none;
-        border-radius: 8px;
+        padding: 3.6px 7.2px;
+        /* 配色・文字の大きさなど */
         font-size: 16px;
+        text-decoration: none;
         font-weight: bold;
         color: white;
-        background-color: #75AABF;
+        background-color: #75aabfa9;
+        border: solid 1px #75AABF;
+        border-radius: 10px;
         transition: .4s;
     }
     
@@ -244,21 +248,94 @@ body {
         font-weight: bold;
         color: white;
         border: solid 3px #c0c1c1;
+        border-radius: 8px;
         transition: .4s;
     }
     
-    .cancelButton, .accountDeleteButton, .registerCompanyButton,
-    .registerInterviewButton, .registerDetailButton{
-        background-color: #c0c1c1;
-        border: solid 1px #75AABF;
+    .cancelButton, .accountDeleteButton{
+        background-color: #c0c1c1bb;
+        border: solid 1px #c0c1c1;
+    }
+    
+    .mainActionButtonList li{
+        /* レイアウト */
+        display: inline-block;
+        text-align: center;
+    }
+    .mainActionButton{
+        /* レイアウト */
+        margin: 0 15px;
+        padding: 18px 65px;
+        /* 配色・文字の大きさなど */
+        background-color: #75aabfa9;
+        border-radius: 10px;
+    }
+    .titleBorder{
+        border-bottom: solid 2px white;
+    }
+    
+    .TitleAndButton{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .subTitleAndButton{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .registerCompanyButton,.registerInterviewButton, .registerDetailButton{
+        margin-left: auto;
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
     
     /* -------------------------------------------------------
     body : その他
     ---------------------------------------------------------- */
     
-    /* .msg{}
+    /* .msg{} */
 
-    .welcome{}
+    .welcome{
+        margin-right: 100px;
+        text-align: right;
+        font-size: 16px;
+        color: #b4b4b4;
+    }
 
-    .calendar{} */
+    .goal{
+        /* レイアウト */
+        position: relative;
+        margin: 0 100px 20px;
+        padding: 24px 0;
+        /* 配色・文字の大きさなど */
+        border-top: solid 2px #c0c1c1;
+        border-bottom: solid 2px #c0c1c1;
+        background: #f4f4f4;
+        line-height: 1.4;
+        font-size: 38px;
+        font-weight: bold;
+    }
+
+    .goal:after {
+        /*タブ*/
+        position: absolute;
+        left: 0px;
+        bottom: 100%;
+        border-radius: 3px 3px 0 0;
+        padding: 5px 7px 3px;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        /* 配色・文字の大きさなど */
+        font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        content: ' < 目 標 > ';
+        background: #c0c1c1;
+        color: #fff;
+    }
+
+
+    .calendar{
+        margin-bottom: 20px;
+    }

@@ -29,8 +29,8 @@
 
 	<%-- contents --%>
 	<div class="conteiner">
-
 		<h1 class="blockTitle"><%=requestCompany.getCompany_name()%></h1>
+
 
 			<%-- 企業情報(単体)を表示する --%>
 			<h2 class="subTitle">企業情報</h2>
@@ -84,7 +84,11 @@
 		<hr>
 
 			<%-- 面接情報を表示する --%>
-			<h2 class="subTitle">面接情報</h2>
+			<div class="subTitleAndButton">
+				<h2>面接情報</h2>
+				<%-- 面接情報を登録するボタン --%>
+				<p><button class="registerInterviewButton" onclick="location.href='/Careemanapp10/RegisterInterview'">面接登録</button></p>
+			</div>
 				<% if (requestInterviews != null && requestInterviews.size() > 0) { %>
 					<% for (InterviewDTO interview : requestInterviews) { %>
 						<table class="interviewTable">
@@ -114,13 +118,17 @@
 					<p>面接情報は未登録です。</p>
 				<% } %>
 
-			<%-- 面接情報を登録するボタン --%>
-			<p><button class="registerInterviewButton" onclick="location.href='/Careemanapp10/RegisterInterview'">面接登録</button></p>
 
 			<hr>
 
 			<%-- 企業情報(詳細)を表示する --%>
-			<h2 class="subTitle">企業詳細</h2>
+			<div class="subTitleAndButton">
+				<h2>企業詳細</h2>
+				<% if (requestCompanyDetail == null) { %>
+					<%-- 企業詳細を登録するボタン --%>
+					<p><button class="registerDetailButton" onclick="location.href='/Careemanapp10/RegisterCompanyDetail'">企業詳細登録</button></p>
+				<% } %>
+			</div>
 				<% if (requestCompanyDetail != null) { %>
 					<table class="detailTable">
 						<tr>
@@ -262,8 +270,6 @@
 					</table>
 				<% }else{ %>
 					<p>企業詳細情報は未登録です。</p>
-					<%-- 企業詳細を登録するボタン --%>
-					<p><button class="registerDetailButton" onclick="location.href='/Careemanapp10/RegisterCompanyDetail'">企業詳細登録</button></p>
 				<% } %>
 	</div>
 
