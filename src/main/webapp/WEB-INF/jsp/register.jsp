@@ -57,11 +57,11 @@
 					<td><input type="text" name="link_work_history" placeholder="職務経歴書のリンクを入力"></td>
 				</tr>
 			</table>
-			<p class="submitButton"><input type="submit" value="登録"></p>
+			<p><button class="submitButton" type="submit">登録</button></p>
 		</form>
 
 		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button></p> --%>
-		<p><button class="otherLink" onclick="location.href='/Careemanapp10/login'">アカウントをお持ちの方はこちら</button></p>
+		<p><a href="/Careemanapp10/login" class="otherLink">アカウントをお持ちの方はこちら</a></p>
 
 	</div>
 

@@ -337,7 +337,7 @@
                     </td>
                 </tr>
             </table>
-            <input class="submitButton" type="submit" value="登録">
+			<p><button class="submitButton" type="submit">登録</button></p>
         </form>
     
 		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/company'">キャンセル</button></p> --%>
