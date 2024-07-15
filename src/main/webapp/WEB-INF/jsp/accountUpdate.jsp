@@ -59,11 +59,11 @@
                     <td><input type="text" name="link_work_history" placeholder="<%= requestAccount.getLink_work_history() %>"></td>
                 </tr>
             </table>
-            <input  class="submitButton" type="submit" value="更新">
+			<p><button class="submitButton" type="submit">更新</button></p>
         </form>
 
 		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button></p> --%>
-		<p><button class="otherLink" onclick="location.href='/Careemanapp10/register'">新規登録はこちら</button></p>
+		<p><a href="/Careemanapp10/register" class="otherLink">新規登録はこちら</a></p>
 
     </div>
 

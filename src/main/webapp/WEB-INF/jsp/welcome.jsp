@@ -22,6 +22,7 @@
 		<h1 class="blockTitle">Careemanappへようこそ</h1>
 		<%-- <p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p> --%>
 		<p><button class="nextActionButton" onclick="location.href='/Careemanapp10/register'">はじめる</button></p>
+		<p><a href="/Careemanapp10/login" class="otherLink">アカウントをお持ちの方はこちら</a></p>
 	</div>
 	
 	<%-- footer --%>

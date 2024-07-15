@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<%-- ロゴ --%>
-		<div class=logo>
+		<div class="logo">
 			<h1>Careemanapp10</h1>
 			<%-- <img src="../../img/sample.jpeg" alt="ロゴ"> --%>
 		</div>

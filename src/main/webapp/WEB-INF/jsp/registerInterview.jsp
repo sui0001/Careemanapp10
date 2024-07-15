@@ -54,7 +54,7 @@
                     <td><textarea name="interview_memo" rows="4" cols="60"></textarea></td>
                 </tr>
             </table>
-			<p><button class="submitButton" type="submit">登録</button></p>
+			<p><button class="submitButton" type="submit">送信</button></p>
         </form>
 
 		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/company'">キャンセル</button></p> --%>

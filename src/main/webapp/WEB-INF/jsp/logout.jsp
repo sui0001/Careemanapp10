@@ -22,7 +22,7 @@
 		<h1 class="blockTitle">Careemanapp10</h1>
 		<p class="msg">ログアウトしました</p>
 		<p><button class="nextActionButton" onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
-		<p><button class="otherLink" onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
+		<p><a href="/Careemanapp10/login" class="otherLink">ログイン画面へ</a></p>
 	</div>
 
 	<%-- footer --%>

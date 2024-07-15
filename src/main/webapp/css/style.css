@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 /* -------------------------------------------------------
@@ -54,22 +53,18 @@ body {
         color: white;
     }
 
-    .logo{
+    .logo, .logo a{
         display: flex;
-        /* width: 100px;
-        height: 50px; */
         font-weight: bold;
-        font-size: 35px;
+        font-size: 40px;
         font-family: 'Sacramento', cursive;
     }
-    .logo a{
+    /* .logo a{
         display: flex;
-        /* width: 100px;
-        height: 50px; */
         font-weight: bold;
-        font-size: 35px;
-        font-family: 'Caveat', cursive;
-    }
+        font-size: 40px;
+        font-family: 'Sacramento', cursive;
+    } */
     
     .logo, .headerNavi :visited{
         color: white;
@@ -90,6 +85,7 @@ body {
         color: white;
     }
 
+    /* ----------反映されていない！--------- */
     .headerButton a{
         /* レイアウト */
         padding: 0.2em 0.4em;
@@ -98,7 +94,7 @@ body {
         text-decoration: none;
         border-radius: 6px;
         /* box-shadow: 0px 0px 0px 5px #668ad8; */
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         color: white;
         /* background-color: #87b9cd; */
@@ -119,7 +115,7 @@ body {
         padding: 10px 0px 10px;  /* 内側の余白 */
         /* 配色・文字の大きさなど */
         /* border-top: 1px solid #e5e7eb; */
-        font-size: 15px;
+        font-size: 14px;
         color: white;
         background-color: #c0c1c1;
     }
@@ -137,48 +133,10 @@ body {
         font-family: Arial, sans-serif;
         color: #507381;
     }
-    
-    form{
-        /* レイアウト */
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        /* テキストのレイアウト */
-        align-items: center;
-        /* 配色・文字の大きさなど */
-        font-size: 16px;
-    }
 
-    table {
-        margin:auto;
-    }
-    /*余白と文字装飾は省略*/
-    table th {
-        text-align: center;
-        padding: 3px 10px;/*上下3pxで左右10px*/
-    }
-    table td {
-        text-align: left;
-        padding: 3px 10px;/*上下3pxで左右10px*/
-    }
-
-    button{
-        /* 配色・文字の大きさなど */
-        padding: 0.2em 0.4em;
-        border: solid 1px #c0c1c1;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #75AABF;
-        transition: .4s;
-    }
-
-
-/* -------------------------------------------------------
+    /* -------------------------------------------------------
     body : conteiner, blockTitle, subTitle, otherLink
----------------------------------------------------------- */
+    ---------------------------------------------------------- */
     .conteiner{
         /* レイアウト */
         margin-right: auto;
@@ -186,71 +144,118 @@ body {
         margin-top: 50px;
         margin-bottom: 95px;
         width: 70%;
-        padding: 20px 20px 20px;
-        border-radius: 15px;
+        padding: 20px 20px 25px;
+        border-radius: 30px;
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
     }
-
+    
     .blockTitle{
         /* レイアウト */
-        align-items: center;
-        margin-bottom: 35px;
+        margin-bottom: 28px;
         /* テキストのレイアウト */
-        font-size: 30px;
-        font-weight: bold;
         /* 配色・文字の大きさなど */
+        font-size: 32px;
+        font-weight: bold;
         border-bottom: solid 6px #0c5fb8;
     }
-
+    
     .subTitle{
         /* レイアウト */
-        /* テキストのレイアウト */
-        /* 配色・文字の大きさなど */
-        font-size: 25px;
-        font-weight: bold;
-        text-align: left;
-        color: #485d59;
         margin-left: 80px;
         margin-right: 80px;
+        margin-bottom: 10px;
+        /* テキストのレイアウト */
+        text-align: left;
+        /* 配色・文字の大きさなど */
+        font-size: 24px;
+        font-weight: bold;
+        color: #485d59;
+        border-bottom: solid 1px #c0c1c1;
     }
-
-    .otherLink a{
+    
+    .otherLink{
+        /* 配色・文字の大きさなど */
         font-size: 16px;
         color: #b4b4b4;
     }
     .otherLink:visited{
         color: #b4b4b4;
     }
-
-/* -------------------------------------------------------
-    body : button
----------------------------------------------------------- */
-    /* .registerCompanyButton, .registerInterviewButton, .registerDetailButton,
-    .submitButton, .accountUPdateButton,
-    .cancelButton, .accountDeleteButton{
-    } */
     
-    /* .submitButton, .accountUPdateButton{}
-
-    .cancelButton, .accountDeleteButton{}
-    
-    .registerCompanyButton{}
-    
-    .registerInterviewButton, .registerDetailButton{}
-
-
-    .nextActionButton{} */
-
-/* -------------------------------------------------------
+    /* -------------------------------------------------------
     body : table
----------------------------------------------------------- */
+    ---------------------------------------------------------- */
+    table {
+        margin:auto;
+    }
+    /*余白と文字装飾は省略*/
+    table th {
+        text-align: center;
+        padding: 3px 15px;/*上下3pxで左右10px*/
+    }
+    table td {
+        text-align: left;
+        padding: 3px 10px;/*上下3pxで左右10px*/
+    }
     
     /* .companyListTable{} */
 
-/* -------------------------------------------------------
+    
+    /* -------------------------------------------------------
+    body : form
+    ---------------------------------------------------------- */
+    form{
+        /* レイアウト */
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        /* form内のレイアウト */
+        align-items: center;
+        /* 配色・文字の大きさなど */
+        font-size: 18px;
+        text-align: left;
+    }
+    
+    /* -------------------------------------------------------
+    body : button
+    ---------------------------------------------------------- */
+    button{
+        /* 配色・文字の大きさなど */
+        margin-top: 10px;
+        margin-bottom: 3px;
+        padding: 0.2em 0.4em;
+        border: solid 1px #c0c1c1;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #75AABF;
+        transition: .4s;
+    }
+    
+    .submitButton, .nextActionButton{
+        /* レイアウト */
+        margin-top: 0px;
+        padding: 0.2em 3em;
+        /* 配色・文字の大きさなど */
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        border: solid 3px #c0c1c1;
+        transition: .4s;
+    }
+    
+    .cancelButton, .accountDeleteButton, .registerCompanyButton,
+    .registerInterviewButton, .registerDetailButton{
+        background-color: #c0c1c1;
+        border: solid 1px #75AABF;
+    }
+    
+    /* -------------------------------------------------------
     body : その他
----------------------------------------------------------- */
+    ---------------------------------------------------------- */
     
     /* .msg{}
 
