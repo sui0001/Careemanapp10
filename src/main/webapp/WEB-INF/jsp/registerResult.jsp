@@ -23,8 +23,8 @@
 	<div class="conteiner">
 		<h1 class="blockTitle">Careemanapp10</h1>
         <p class="msg"><%= msg %></p>
-		<p><button onclick="location.href='/Careemanapp10/login'">ログイン画面へ</button></p>
-        <p><a href="/Careemanapp10/welcome">ホームに戻る</a></p>
+		<p><a href="/Careemanapp10/login" class="nextActionButton">ログイン画面へ</a></p>
+        <p><a href="/Careemanapp10/welcome" class="otherLink">ホームに戻る</a></p>
 	</div>
 	
 	<%-- footer --%>

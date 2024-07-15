@@ -21,8 +21,8 @@
 	<div class="conteiner">
 		<h1 class="blockTitle">Careemanapp10</h1>
 		<p class="msg">ログアウトしました</p>
-		<p class="nextActionBotton"><button onclick="location.href='/Careemanapp10/welcome'">ホームに戻る</button></p>
-		<p class="otherLink"><a href="/Careemanapp10/login">ログイン画面へ</a></p>
+		<p><a href="/Careemanapp10/welcome" class="nextActionButton">ホームに戻る</a></p>
+		<p><a href="/Careemanapp10/login" class="otherLink">ログイン画面へ</a></p>
 	</div>
 
 	<%-- footer --%>

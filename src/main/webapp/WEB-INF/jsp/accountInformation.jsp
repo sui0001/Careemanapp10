@@ -60,10 +60,10 @@
             </table>
             
             <%-- ユーザー情報の削除画面へ遷移するボタン (未完成) --%>
-            <button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">削除する</button>
+            <a href="/Careemanapp10/welcome" class="cancelButton">削除する</a>
 
             <%-- ユーザー情報の更新画面へ遷移するボタン --%>
-            <button class="accountUpdateBotton" onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button></p>
+            <a href="/Careemanapp10/AccountUpdate"  class="accountUpdateButton">更新する</a>
     </div>
 	<%-- footer --%>
 		<%@include file= "footerAfterLogin.jsp" %>

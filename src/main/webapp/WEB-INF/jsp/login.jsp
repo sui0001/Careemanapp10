@@ -37,12 +37,12 @@
                     <td><input type="password" name="pass" placeholder="パスワードを入力"></td>
                 </tr>
             </table>
-            <input class="submitBotton" type="submit" value="ログイン">
+            <input class="submitButton" type="submit" value="ログイン">
         </form>
         
-        <button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
+        <%-- <a href="/Careemanapp10/welcome"  class="cancelButton" >キャンセル</a> --%>
 		
-        <p class="otherLink"><a href="/Careemanapp10/register">新規登録はこちら</a></p>
+        <a href="/Careemanapp10/register" class="otherLink">新規登録はこちら</a>
         
     </div>
 

@@ -337,10 +337,10 @@
                     </td>
                 </tr>
             </table>
-            <p class="submitBotton"><input type="submit" value="登録"></p>
+            <input class="submitButton" type="submit" value="登録">
         </form>
-        
-        <button class="cancelBotton" onclick="location.href='/Careemanapp10/company'">キャンセル</button>
+    
+        <a href="/Careemanapp10/company" class="cancelButton">キャンセル</a>
     </div>
 
 	<%-- footer --%>

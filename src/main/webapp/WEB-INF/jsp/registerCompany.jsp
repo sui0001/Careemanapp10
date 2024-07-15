@@ -112,10 +112,10 @@
                     <td><textarea name="points_to_confirm" rows="5" cols="60"></textarea></td>
                 </tr>
             </table>
-            <p class="submitBotton"><input type="submit" value="登録"></p>
+            <input class="submitButton" type="submit" value="登録">
         </form>
 		
-        <button class="cancelBotton" onclick="location.href='/Careemanapp10/CompanyList'">キャンセル</button>
+        <%-- <a href="/Careemanapp10/CompanyList" class="cancelButton">キャンセル</a> --%>
 
     </div>
     

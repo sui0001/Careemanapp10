@@ -59,9 +59,9 @@
                     <td><input type="text" name="link_work_history" placeholder="<%= requestAccount.getLink_work_history() %>"></td>
                 </tr>
             </table>
-			<button class="cancelBotton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button>
-            <p class="submitBotton"><input type="submit" value="更新"></p>
+            <input  class="submitButton" type="submit" value="更新">
         </form>
+			<%-- <a href="/Careemanapp10/welcome" class="cancelButton">キャンセル</a> --%>
     </div>
 
 	<%-- footer --%>
