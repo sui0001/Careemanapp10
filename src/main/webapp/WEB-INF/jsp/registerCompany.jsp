@@ -86,12 +86,13 @@
                 <tr>
                     <th>タスク</th>
                     <td>
+                        <input type="checkbox" name="selection_tasks" value="なし"> なし
                         <input type="checkbox" name="selection_tasks" value="返信"> 返信
                         <input type="checkbox" name="selection_tasks" value="日程調整"> 日程調整
-                        <input type="checkbox" name="selection_tasks" value="書類送付"> 書類送付
-                        <input type="checkbox" name="selection_tasks" value="テスト受験"> テスト受験<br>
-                        <input type="checkbox" name="selection_tasks" value="完了報告 (エージェント)"> 完了報告
-                        <input type="checkbox" name="selection_tasks" value="面接後アンケート (エージェント)"> 面接後アンケート
+                        <input type="checkbox" name="selection_tasks" value="書類送付"> 書類送付<br>
+                        <input type="checkbox" name="selection_tasks" value="テスト受験"> テスト受験
+                        <input type="checkbox" name="selection_tasks" value="完了報告"> 完了報告
+                        <input type="checkbox" name="selection_tasks" value="面接後アンケート"> 面接後アンケート
                         <input type="checkbox" name="selection_tasks" value="その他"> その他
                     </td>
                 </tr>

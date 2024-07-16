@@ -32,6 +32,10 @@ body {
     gap: 40px;
 }
 
+a:hover{
+    /* 配色・文字の大きさなど */
+    color: #bf7575;
+}
 
 
 /* -------------------------------------------------------
@@ -59,6 +63,9 @@ body {
         font-size: 40px;
         font-family: 'Sacramento', cursive;
     }
+    /* .welcomeLogo{
+        font-family: 'Sacramento', cursive;
+    } */
     /* .logo a{
         display: flex;
         font-weight: bold;
@@ -67,6 +74,9 @@ body {
     } */
     
     .logo, .headerNavi :visited{
+        color: white;
+    }
+    .logo a:hover{
         color: white;
     }
 
@@ -83,6 +93,9 @@ body {
         font-size: 18px;
         font-weight: bold;
         color: white;
+    }
+    .headerNavi a:hover{
+        color: #bf7575;
     }
 
     /* ----------反映されていない！--------- */
@@ -110,6 +123,7 @@ body {
         /* レイアウト */
         /* float: clear; */
         position: fixed; /* フッターを固定する */
+        left: 0;
         bottom: 0; /* 上部から配置の基準位置を決める */
         width: 100%;
         padding: 10px 0px 10px;  /* 内側の余白 */
@@ -141,14 +155,16 @@ body {
         /* レイアウト */
         margin-right: auto;
         margin-left: auto;
-        margin-top: 50px;
-        margin-bottom: 95px;
+        margin-top: 70px;
+        margin-bottom: 115px;
         width: 70%;
-        padding: 20px 20px 25px;
+        padding: 20px 20px 30px;
         border-radius: 30px;
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
     }
+
+    /* .companyInfoBlock, .companyInfoBlockLast{} */
 
     .mainPageTitle{
         font-family: 'Sacramento', cursive;
@@ -156,19 +172,24 @@ body {
     
     .blockTitle, .TitleAndButton{
         /* レイアウト */
-        margin-bottom: 28px;
+        margin-bottom: 35px;
         /* テキストのレイアウト */
         /* 配色・文字の大きさなど */
         font-size: 32px;
         font-weight: bold;
-        border-bottom: solid 6px #75AABF;
+        border-bottom: solid 5px #75AABF;
+    }
+
+    .blockTitleLeft{
+        margin-left: 50px;
     }
     
     .subTitle, .subTitleAndButton{
         /* レイアウト */
+        margin-top: 45px;
         margin-left: 80px;
         margin-right: 80px;
-        margin-bottom: 10px;
+        margin-bottom: 35px;
         /* テキストのレイアウト */
         text-align: left;
         /* 配色・文字の大きさなど */
@@ -192,34 +213,102 @@ body {
     ---------------------------------------------------------- */
     table {
         margin:auto;
+        color: #507381;
     }
     /*余白と文字装飾は省略*/
     table th {
-        text-align: center;
-        padding: 3px 15px;/*上下3pxで左右10px*/
+        text-align: left;
+        vertical-align: top;
+        padding: 3px 12px;
+        white-space: nowrap;
+        color: #485d59d1;
     }
     table td {
         text-align: left;
-        padding: 3px 10px;/*上下3pxで左右10px*/
+        vertical-align: top;
+        padding: 3px 12px;
+        white-space: nowrap;
     }
     
-    /* .companyListTable{} */
+    /* ----companyList---- */
+    .companyListTable th{
+        text-align: center;
+    }
+    .tdCenter{
+        text-align: center;
+    }
+    .tdPaddingWide{
+        padding: 3px 15px;
+    }
+
+    /* ----company:全体共通---- */
+    .companyInfoBlock, .companyInfoBlockLast{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 30px;
+    }
+    .overflowTableBlock{
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+    }
+    .overflowTableBlock::-webkit-scrollbar{
+        width: 6px;
+        height: 6px;
+    }
+    .overflowTableBlock::-webkit-scrollbar-track{
+        background-color: #c0c1c135;
+        border-radius: 5px;
+    }
+    .overflowTableBlock::-webkit-scrollbar-thumb{
+        background-color: #c0c1c188;
+        border-radius: 5px;
+    }
+
+    /* ----company:basic---- */
+    .siteUrl{
+        display: flex;
+
+        gap: 5px;
+    }
+    .companyInfo{
+        display: flex;
+    }
+    .companyTable2{
+        margin-left: 40px;
+    }
+
+    /* ----company:interview---- */
+    .interviewTable{
+        margin-top: 0px;
+        height: auto;
+        width: 240px;
+        color: #507381;
+    }
+    /* ----company:detail---- */
+    .detailTable1Block{
+        margin-bottom: 30px;
+    }
+    .detailTable1{
+        display: flex;
+    }
+    .detailTable1 td{
+        white-space: pre-wrap;
+    }
+    .detailTable2{
+        margin-top: 0px;
+        color: #507381;
+    }
+
+    /* ----account---- */
 
     
     /* -------------------------------------------------------
     body : form
     ---------------------------------------------------------- */
-    form{
-        /* レイアウト */
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        /* form内のレイアウト */
-        align-items: center;
-        /* 配色・文字の大きさなど */
-        font-size: 18px;
-        text-align: left;
-    }
+    /* form{
+
+    } */
     
     /* -------------------------------------------------------
     body : button
@@ -239,9 +328,15 @@ body {
         transition: .4s;
     }
     
+    button:hover{
+        cursor: pointer;
+        background-color: #bf7575;
+
+    }
+    
     .submitButton, .nextActionButton{
         /* レイアウト */
-        margin-top: 0px;
+        margin-top: 30px;
         padding: 0.2em 3em;
         /* 配色・文字の大きさなど */
         font-size: 24px;
@@ -252,7 +347,7 @@ body {
         transition: .4s;
     }
     
-    .cancelButton, .accountDeleteButton{
+    .cancelButton, .accountDeleteButton, .siteUrlButton{
         background-color: #c0c1c1bb;
         border: solid 1px #c0c1c1;
     }
@@ -260,6 +355,7 @@ body {
     .mainActionButtonList li{
         /* レイアウト */
         display: inline-block;
+        margin-bottom: 10px;
         text-align: center;
     }
     .mainActionButton{
@@ -284,10 +380,11 @@ body {
         justify-content: space-between;
         align-items: center;
     }
-    .registerCompanyButton,.registerInterviewButton, .registerDetailButton{
+    .registerCompanyButton,.registerInterviewButton, .registerDetailButton, .siteUrlButton{
         margin-left: auto;
         margin-right: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        padding: 2px 10px;
     }
     
     /* -------------------------------------------------------

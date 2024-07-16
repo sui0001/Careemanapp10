@@ -35,14 +35,14 @@
                 </tr>
                 <tr>
                     <th>面接内容基本</th>
-                    <td>
-                        <input type="checkbox" name="interview_content_basic" value="自己紹介">自己紹介<br>
-                        <input type="checkbox" name="interview_content_basic" value="前職の内容">前職の内容<br>
-                        <input type="checkbox" name="interview_content_basic" value="力を入れたこと">力を入れたこと<br>
+                    <td class="inputCheckbox">
+                        <input type="checkbox" name="interview_content_basic" value="自己紹介">自己紹介
+                        <input type="checkbox" name="interview_content_basic" value="前職の内容">前職の内容
+                        <input type="checkbox" name="interview_content_basic" value="力を入れたこと">力を入れたこと
                         <input type="checkbox" name="interview_content_basic" value="苦労した経験">苦労した経験<br>
-                        <input type="checkbox" name="interview_content_basic" value="退職理由">退職理由<br>
-                        <input type="checkbox" name="interview_content_basic" value="志望理由 (業界・職種)">志望理由 (業界・職種)<br>
-                        <input type="checkbox" name="interview_content_basic" value="志望動機 (企業)">志望動機 (企業)<br>
+                        <input type="checkbox" name="interview_content_basic" value="退職理由">退職理由
+                        <input type="checkbox" name="interview_content_basic" value="志望理由 (業界・職種)">志望理由 (業界・職種)
+                        <input type="checkbox" name="interview_content_basic" value="志望動機 (企業)">志望動機 (企業)
                     </td>
                 </tr>
                 <tr>

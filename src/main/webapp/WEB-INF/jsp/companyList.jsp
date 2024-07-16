@@ -28,46 +28,50 @@
 	<%-- contents --%>
     <div class="conteiner">
         <div class="TitleAndButton">
-            <h1>選考状況</h1>
+            <h1 class="blockTitleLeft">選考状況</h1>
             <%-- 企業登録画面へ遷移するボタン --%>
             <p><button class="registerCompanyButton" onclick="location.href='/Careemanapp10/RegisterCompany'">企業登録</button></p>
         </div>
 
             <%-- 企業リストを表示する --%>
-            <table class="companyListTable">
-                <tr>
-                    <th>企業名</th>
-                    <th>応募媒体</th>
-                    <th>選考状況</th>
-                    <th>日程</th>
-                    <th>選考フロー</th>
-                    <%-- <th>HPリンク</th> --%>
-                    <%-- <th>口コミリンク</th> --%>
-                    <th>タスク内容</th>
-                    <%-- <th>志望動機</th> --%>
-                    <%-- <th>良い点</th> --%>
-                    <%-- <th>懸念点</th> --%>
-                    <th>確認事項</th>
-                </tr>
-
-                <% for (CompanyDTO company : requestCompanyList) { %>
+            <% if(requestCompanyList == null || requestCompanyList.size() == 0) { %>
+                    <p>登録されている企業はありません。</p>
+            <% }else{ %>
+                <table class="companyListTable">
                     <tr>
-                        <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %> <%-- 企業IDを遷移時に使えるようにする --%>
-                        <td><a href=<%= url %>><%= company.getCompany_name() %></a></td>
-                        <td><%= company.getSelection_application() %></td>
-                        <td><%= company.getSelection_status() %></td>
-                        <td><%= company.getSelection_date() %></td>
-                        <td><%= company.getSelection_flow() %></td>
-                        <%-- <td><%= company.getLink_hp() %></td> --%>
-                        <%-- <td><%= company.getLink_review() %></td> --%>
-                        <td><%= company.getSelection_task() %></td>
-                        <%-- <td><%= company.getSelection_motivation() %></td> --%>
-                        <%-- <td><%= company.getPositive_points() %></td> --%>
-                        <%-- <td><%= company.getNegative_points() %></td> --%>
-                        <td><%= company.getPoints_to_confirm() %></td>
+                        <th>企業名</th>
+                        <th>応募媒体</th>
+                        <th>選考状況</th>
+                        <th>日程</th>
+                        <th>タスク内容</th>
+                        <th>選考フロー</th>
+                        <%-- <th>HPリンク</th> --%>
+                        <%-- <th>口コミリンク</th> --%>
+                        <%-- <th>志望動機</th> --%>
+                        <%-- <th>良い点</th> --%>
+                        <%-- <th>懸念点</th> --%>
+                        <th>確認事項</th>
                     </tr>
-                <% } %>
-            </table>
+
+                    <% for (CompanyDTO company : requestCompanyList) { %>
+                        <tr>
+                            <% String url = "/Careemanapp10/Company?company_id=" + company.getCompany_id(); %> <%-- 企業IDを遷移時に使えるようにする --%>
+                            <td><a href=<%= url %>><%= company.getCompany_name() %></a></td>
+                            <td class="tdCenter"><%= company.getSelection_application() %></td>
+                            <td class="tdCenter"><%= company.getSelection_status() %></td>
+                            <td class="tdCenter"><%= company.getSelection_date() %></td>
+                            <td class="tdPaddingWide"><%= company.getSelection_task() %></td>
+                            <td class="tdPaddingWide"><%= company.getSelection_flow() %></td>
+                            <%-- <td><%= company.getLink_hp() %></td> --%>
+                            <%-- <td><%= company.getLink_review() %></td> --%>
+                            <%-- <td><%= company.getSelection_motivation() %></td> --%>
+                            <%-- <td><%= company.getPositive_points() %></td> --%>
+                            <%-- <td><%= company.getNegative_points() %></td> --%>
+                            <td><%= company.getPoints_to_confirm() %></td>
+                        </tr>
+                    <% } %>
+                </table>
+            <% } %>
         
     </div>
 

@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <th>年齢</th>
-                    <td><%= requestAccount.getAge() %></td>
+                    <td><%= requestAccount.getAge() %> 歳</td>
                 </tr>
                 <tr>
                     <th>メール</th>
@@ -47,15 +47,33 @@
                 </tr>
                 <tr>
                     <th>目標</th>
-                    <td><%= requestAccount.getGoal() %></td>
+                    <td>
+                        <% if(requestAccount.getGoal() == null){ %>
+                            目標は未設定です。
+                        <% }else{ %>
+                            <%= requestAccount.getGoal() %>
+                        <% } %>
+                    </td>
                 </tr>
                 <tr>
                     <th>履歴書</th>
-                    <td><%= requestAccount.getLink_resume() %></td>
+                    <td>
+                        <% if(requestAccount.getLink_resume() == null){ %>
+                            履歴書は未登録です。
+                        <% }else{ %>
+                            <%= requestAccount.getLink_resume() %>
+                        <% } %>
+                    </td>
                 </tr>
                 <tr>
                     <th>職務経歴書</th>
-                    <td><%= requestAccount.getLink_work_history() %></td>
+                    <td>
+                        <% if(requestAccount.getLink_work_history() == null){ %>
+                            職務経歴書は未登録です。
+                        <% }else{ %>
+                            <%= requestAccount.getLink_work_history() %>
+                        <% } %>
+                    </td>
                 </tr>
             </table>
             
