@@ -67,7 +67,7 @@
                             <%-- <td><%= company.getSelection_motivation() %></td> --%>
                             <%-- <td><%= company.getPositive_points() %></td> --%>
                             <%-- <td><%= company.getNegative_points() %></td> --%>
-                            <td><%= company.getPoints_to_confirm() %></td>
+                            <td class="tdWide"><%= company.getPoints_to_confirm() %></td>
                         </tr>
                     <% } %>
                 </table>

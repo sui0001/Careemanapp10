@@ -27,14 +27,15 @@
 
         <h1 class="blockTitle">ユーザー情報</h1>
 
-            <%-- ユーザー情報を表示 --%>
+        <%-- ユーザー情報を表示 --%>
+        <div class="accountTableBlock">
             <table class="accountTable">
                 <tr>
                     <th>ユーザーID</th>
                     <td><%= requestAccount.getUser_id() %></td>
                 </tr>
                 <tr>
-                    <th>ユーザーネーム</th>
+                    <th>ユーザー名</th>
                     <td><%= requestAccount.getName() %></td>
                 </tr>
                 <tr>
@@ -45,6 +46,8 @@
                     <th>メール</th>
                     <td><%= requestAccount.getMail() %></td>
                 </tr>
+            <%-- </table>
+            <table class="accountTable"> --%>
                 <tr>
                     <th>目標</th>
                     <td>
@@ -76,12 +79,17 @@
                     </td>
                 </tr>
             </table>
-            
-            <%-- ユーザー情報の削除画面へ遷移するボタン (未完成) --%>
-            <button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">削除する</button>
-
-            <%-- ユーザー情報の更新画面へ遷移するボタン --%>
-            <button class="accountUpdateButton" onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button>
+        </div>
+        
+        <ul class="buttonList">
+            <li>
+                <%-- ユーザー情報の削除画面へ遷移するボタン (未完成) --%>
+                <button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">削除する</button>
+            </li>
+            <li>
+                <%-- ユーザー情報の更新画面へ遷移するボタン --%>
+                <button class="accountUpdateButton" onclick="location.href='/Careemanapp10/AccountUpdate'">更新する</button>
+            </li>
     </div>
 
 	<%-- footer --%>
