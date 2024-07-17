@@ -1,12 +1,15 @@
 package service;
 
+import java.util.List;
+
 import dao.CompanyDetailDAO;
-import dto.CompanyDetailDTO;
+import domain.CompanyCompare;
 
 public class CompanyCompareService {
-    public CompanyDetailDTO execute(CompanyDetailDTO companyCompare) {
+    public List<CompanyCompare> execute(CompanyCompare companyCompare) {
         CompanyDetailDAO dao = new CompanyDetailDAO();
-        CompanyDetailDTO companyDetails = dao.CompanyCompare(companyCompare);
-        return companyDetails;
+        List<CompanyCompare> compareData = dao.CompanyCompare(companyCompare);
+        // System.out.println(compareData);
+        return compareData;
     }
 }

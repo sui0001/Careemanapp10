@@ -1,5 +1,5 @@
 // findByCompanyDetailメソッド：企業IDを基に企業詳細を取得するメソッド (1企業分)
-// findByCompanyDetailsメソッド：企業IDを基に企業詳細を取得するメソッド (複数企業分) ※未作成
+// findByCompanyDetailsメソッド：ユーザーIDを基に企業詳細を取得するメソッド (複数企業分) ※未作成
 // createCompanyDetailメソッド：企業詳細を登録するメソッド
 
 
@@ -10,7 +10,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import domain.CompanyCompare;
 import dto.CompanyDetailDTO;
 
 public class CompanyDetailDAO {
@@ -98,28 +101,42 @@ public class CompanyDetailDAO {
 
 
 
-    // CompanyCompareメソッド：企業IDを基に企業詳細を取得するメソッド
-    public CompanyDetailDTO CompanyCompare(CompanyDetailDTO companyCompare){
+    // CompanyCompareメソッド：ユーザーIDを基に企業詳細を取得するメソッド
+    public List<CompanyCompare> CompanyCompare(CompanyCompare companyCompare){
     	//変数のスコープの都合上、変数companyDetailをtryブロックの外で初期化する。
 		// 後でデータベースから取得したユーザー情報を格納するための変数
-        CompanyDetailDTO companyDetails = null;
+        List<CompanyCompare> compareData = new ArrayList<>();
 
         // データベースへ接続（Connectionオブジェクトconnを自動的に閉じるtry-with-resources文）
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_MAIL, DB_PASS)) {
             
             // SELECT文を準備
-            String sql = "SELECT * FROM company_details WHERE user_id = ?";
+            String sql = "SELECT company_details.* , companies.* FROM company_details INNER JOIN companies ON company_details.company_id = companies.company_id AND company_details.user_id = companies.user_id WHERE companies.user_id = ?";
             PreparedStatement pStmt = conn.prepareStatement(sql);
-            // 1番目のプレースホルダにcompany_idをセット
-            pStmt.setInt(1, companyCompare.getCompany_id());
+            // 1番目のプレースホルダにuser_idをセット
+            pStmt.setString(1, companyCompare.getUser_id());
+            System.out.println("DAO:"+companyCompare.getUser_id());
+
 
             // SELECT文を実行し、結果をrsに格納
             ResultSet rs = pStmt.executeQuery();
 
             if (rs.next()) {
                 // 結果からデータを取得
-                String user_id = rs.getString("user_id"); // ユーザID
-                int company_id = rs.getInt("company_id"); // 企業ID
+                int company_id = rs.getInt("company_id"); // 企業ID : 主キー
+                System.out.println("DAO:"+company_id);
+                String company_name = rs.getString("company_name"); // 企業名
+                String selection_application = rs.getString("selection_application"); // 応募媒体
+                String selection_status = rs.getString("selection_status"); // 選考状況
+                String selection_date = rs.getString("selection_date"); // 日程
+                String selection_flow = rs.getString("selection_flow"); // 選考フロー
+                String link_hp = rs.getString("link_hp"); // HPリンク
+                String link_review = rs.getString("link_review"); // 口コミリンク
+                String selection_task = rs.getString("selection_task"); // タスク内容
+                String selection_motivation = rs.getString("selection_motivation"); // 志望動機
+                String positive_points = rs.getString("positive_points"); // 良い点
+                String negative_points = rs.getString("negative_points"); // 懸念点
+                String points_to_confirm = rs.getString("points_to_confirm"); // 確認事項
                 int company_detail_id = rs.getInt("company_detail_id"); // 基本詳細ID : 主キー
                 String management_status = rs.getString("management_status"); // 経営状況
                 String business_content = rs.getString("business_content"); // 事業内容
@@ -158,14 +175,17 @@ public class CompanyDetailDAO {
                 String retirement_benefits = rs.getString("retirement_benefits"); // 退職金
 
                 // 一致した企業詳細が存在した場合、その企業詳細を表すcompanyDetailDTOインスタンスを生成
-                companyDetails =
-                    new CompanyDetailDTO(user_id, company_id, company_detail_id, management_status, business_content, job_description,
-                        work_location, remote_work, working_hours, standard_working_hours, break_time, break_time_rule,
-                            average_overtime_hours, annual_holidays, holiday_type, paid_holidays, other_holidays, holiday_notes,
-                                annual_salary_upper, annual_salary_lower, monthly_salary_upper, monthly_salary_lower,
-                                    basic_salary_upper, basic_salary_lower, fixed_overtime_pay_upper, fixed_overtime_pay_lower,
-                                        fixed_overtime_hours, commuting_allowance, housing_allowance, qualification_support,qualification_allowance, other_allowances,
-                                            bonus, bonus_record, social_insurance, probation_period, probation_period_changes, retirement_benefits);
+                CompanyCompare compareDatum = new CompanyCompare(company_id, company_name, selection_application, selection_status, selection_date, selection_flow,
+                                                        link_hp, link_review, selection_task, selection_motivation, positive_points, negative_points, points_to_confirm,
+                                                        company_detail_id, management_status, business_content, job_description, work_location, remote_work, working_hours,
+                                                        standard_working_hours, break_time, break_time_rule, average_overtime_hours, annual_holidays, holiday_type, paid_holidays,
+                                                        other_holidays, holiday_notes, annual_salary_upper, annual_salary_lower, monthly_salary_upper, monthly_salary_lower,
+                                                        basic_salary_upper, basic_salary_lower, fixed_overtime_pay_upper, fixed_overtime_pay_lower, fixed_overtime_hours,
+                                                        commuting_allowance, housing_allowance, qualification_support, qualification_allowance, other_allowances, bonus,
+                                                        bonus_record, social_insurance, probation_period, probation_period_changes, retirement_benefits);
+                compareData.add(compareDatum);
+                System.out.println(compareDatum);
+                System.out.println(compareData);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -173,7 +193,7 @@ public class CompanyDetailDAO {
         }
 
         // DBに企業詳細があれば企業詳細が入った変数companyDetailを返す。なければnullを返すcatchブロックの中のreturn文
-        return companyDetails;
+        return compareData;
     }
 
 

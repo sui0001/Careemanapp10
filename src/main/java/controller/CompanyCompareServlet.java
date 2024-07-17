@@ -17,10 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dto.CompanyDTO;
-import dto.CompanyDetailDTO;
+import domain.CompanyCompare;
 import service.CompanyCompareService;
-import service.FindCompanyService;
 
 
 @WebServlet("/CompanyCompare")
@@ -39,28 +37,36 @@ public class CompanyCompareServlet extends HttpServlet {
 			// ユーザIDを取得
 			String user_id = (String) session.getAttribute("user_id");
 			
-			// 1. ユーザIDを基に企業情報を取得
-			CompanyDTO findCompany =
-				new CompanyDTO(user_id, 0, null, null,null,
-					null, null, null, null, null,
-						null, null, null, null);
-			FindCompanyService findcompanyService = new FindCompanyService();
-			List<CompanyDTO> companies = findcompanyService.execute(findCompany);
-		// 	// System.out.println(companies);
+		// 	// 1. ユーザIDを基に企業情報を取得
+		// 	CompanyDTO findCompany =
+		// 		new CompanyDTO(user_id, 0, null, null,null,
+		// 			null, null, null, null, null,
+		// 				null, null, null, null);
+		// 	FindCompanyService findcompanyService = new FindCompanyService();
+		// 	List<CompanyDTO> companies = findcompanyService.execute(findCompany);
+		// // 	// System.out.println(companies);
 
-			// 2.ユーザーIDを基に企業詳細情報を取得
-			CompanyDetailDTO findCompanyDetails =
-				new CompanyDetailDTO(user_id, 0, 0, null, null, null,
-					null, null, null, 0, 0, null, 0, 0, null, null, null, null,
-						0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
-			CompanyCompareService findCompanyDetailService = new CompanyCompareService();
-			CompanyDetailDTO details = findCompanyDetailService.execute(findCompanyDetails);
-			System.out.println(details);
+			// // 2.ユーザーIDを基に企業詳細情報を取得
+			// CompanyDetailDTO findCompanyDetails =
+			// 	new CompanyDetailDTO(user_id, 0, 0, null, null, null,
+			// 		null, null, null, 0, 0, null, 0, 0, null, null, null, null,
+			// 			0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
+			// CompanyCompareService findCompanyDetailService = new CompanyCompareService();
+			// List<CompanyDetailDTO> details = findCompanyDetailService.execute(findCompanyDetails);
+			// System.out.println(details);
+			
+			CompanyCompare compareDatum = new CompanyCompare(user_id, 0, null, null,null,
+			null, null, null, null, null,null, null, null, null, 0, null, null,
+			null,null, null, null, 0, 0, null, 0, 0, null, null, null, null,
+			0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
+			CompanyCompareService companyCompareService = new CompanyCompareService();
+			List<CompanyCompare> details = companyCompareService.execute(compareDatum);
+
 
 			
 			// 企業情報をリクエストスコープに保存
-			req.setAttribute("companies", companies);
 			req.setAttribute("details", details);
+			System.out.println(details);
 
 
 		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/companyCompare.jsp");
