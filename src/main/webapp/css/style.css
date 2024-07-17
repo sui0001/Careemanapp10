@@ -232,7 +232,7 @@ a:hover{
     
     /* ----companyList---- */
     .companyListTable{
-        margin-top: 50  px;
+        margin-top: 50px;
         margin-bottom: 20px;
         border-bottom: solid 2px #c0c1c1;
     }
@@ -353,7 +353,7 @@ a:hover{
     
     .submitButton, .nextActionButton{
         /* レイアウト */
-        margin-top: 30px;
+        margin-top: 25px;
         padding: 0.2em 3em;
         /* 配色・文字の大きさなど */
         font-size: 24px;
@@ -402,6 +402,9 @@ a:hover{
         margin-right: 10px;
         margin-bottom: 5px;
         padding: 2px 10px;
+    }
+    .registerCompanyButton{
+        margin-right: 80px;
     }
     
     .buttonList{

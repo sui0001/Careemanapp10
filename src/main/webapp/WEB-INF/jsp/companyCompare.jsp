@@ -7,6 +7,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%-- リクエストスコープから取り出す (必要ファイルのインポート忘れない) --%>
+<%@ page import="dto.*" %>
+<%@ page import="java.util.List" %>
+<% request.setCharacterEncoding("UTF-8"); %>
+<% List<CompanyDTO> requestCompanyList =  (List<CompanyDTO>)request.getAttribute("companies"); %>
+<% CompanyDetailDTO requestCompanyDetail = (CompanyDetailDTO)request.getAttribute("details"); %>
+
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +40,8 @@
 
         <%-- 企業比較テーブルの表示 --%>
         <div class="comCompareTable">
-            // 企業比較用のテーブルを作成
+            <table>
+
         </div>
     </div>
     

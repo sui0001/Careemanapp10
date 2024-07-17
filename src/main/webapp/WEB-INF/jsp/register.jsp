@@ -29,7 +29,7 @@
 					<td><input type="text" name="user_id" placeholder="数字を入力"></td>
 				</tr>
 				<tr>
-					<th>ユーザーネーム</th>
+					<th>ユーザー名</th>
 					<td><input type="text" name="name" placeholder="にゃんたろ"></td>
 				</tr>
 				<tr>
@@ -37,7 +37,7 @@
 					<td><input type="number" name="age" placeholder="数字を入力"></td>
 				</tr>
 				<tr>
-					<th>メールアドレス</th>
+					<th>メール</th>
 					<td><input type="email" name="mail" placeholder="nekoneko29q@gmail.com"></td>
 				</tr>
 				<tr>

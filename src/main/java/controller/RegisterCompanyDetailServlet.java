@@ -42,6 +42,7 @@ public class RegisterCompanyDetailServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 
 		// 新規登録の面接内容を取得
+		String usesr_id = (String)session.getAttribute("user_id"); // ユーザIDをセッションスコープから取得
 		int company_id = (int)session.getAttribute("company_id"); // 企業IDをセッションスコープから取得
 		int company_detail_id = 0; // 基本詳細IDは自動採番
 		String management_status = req.getParameter("management_status"); // 経営状況
@@ -84,7 +85,7 @@ public class RegisterCompanyDetailServlet extends HttpServlet {
 
 		// 面接情報をCompanyDetailDTOインスタンスに格納
 		CompanyDetailDTO newCompanyDetail =
-			new CompanyDetailDTO(company_id, company_detail_id, management_status, business_content, job_description,
+			new CompanyDetailDTO(usesr_id, company_id, company_detail_id, management_status, business_content, job_description,
 				work_location, remote_work, working_hours, standard_working_hours, break_time, break_time_rule,
 					average_overtime_hours, annual_holidays, holiday_type, paid_holidays, other_holidays,
 						holiday_notes, annual_salary_upper, annual_salary_lower, monthly_salary_upper, monthly_salary_lower,

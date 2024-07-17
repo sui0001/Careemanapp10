@@ -39,6 +39,9 @@ public class CompanyServlet extends HttpServlet {
 			// セッションスコープからの取得
 			HttpSession session = req.getSession();
 
+			// ユーザーIDを取得
+			String user_id = (String) session.getAttribute("user_id");
+
 			// company_idを取得 (企業リストページのcompanyList.jspから遷移時はリクエストパラメータから取得/面接や詳細ページから遷移時はセッションスコープから取得)
 			int company_id;
 			if (req.getParameter("company_id") == null) {
@@ -66,7 +69,7 @@ public class CompanyServlet extends HttpServlet {
 
 			// 3.企業IDを基に企業詳細情報を取得
 			CompanyDetailDTO findCompanyDetail =
-				new CompanyDetailDTO(company_id, 0, null, null, null,
+				new CompanyDetailDTO(user_id, company_id, 0, null, null, null,
 					null, null, null, 0, 0, null, 0, 0, null, null, null, null,
 						0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
 			FindCompanyDetailService findCompanyDetailService = new FindCompanyDetailService();

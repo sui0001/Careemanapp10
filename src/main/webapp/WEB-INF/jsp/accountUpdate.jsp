@@ -63,7 +63,7 @@
         </form>
 
 		<%-- <p><button class="cancelButton" onclick="location.href='/Careemanapp10/welcome'">キャンセル</button></p> --%>
-		<p><a href="/Careemanapp10/register" class="otherLink">新規登録はこちら</a></p>
+		<%-- <p><a href="/Careemanapp10/register" class="otherLink">新規登録はこちら</a></p> --%>
 
     </div>
 

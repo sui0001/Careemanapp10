@@ -1,6 +1,7 @@
 package dto;
 
 public class CompanyDetailDTO {
+		private String user_id; // ユーザID
 		private int company_id; // 企業ID
         private int company_detail_id; // 基本詳細ID : 主キー
         private String management_status; // 経営状況
@@ -41,7 +42,7 @@ public class CompanyDetailDTO {
 
 
 		// コンストラクタ
-			public CompanyDetailDTO(int company_id, int company_detail_id, String management_status, String business_content,
+			public CompanyDetailDTO(String user_id, int company_id, int company_detail_id, String management_status, String business_content,
 					String job_description, String work_location, String remote_work, String working_hours,
 					int standard_working_hours, int break_time, String break_time_rule, int average_overtime_hours,
 					int annual_holidays, String holiday_type, String paid_holidays, String other_holidays,
@@ -51,6 +52,7 @@ public class CompanyDetailDTO {
 					String qualification_support, String qualification_allowance, String other_allowances, String bonus,
 					String bonus_record, String social_insurance, String probation_period, String probation_period_changes,
 					String retirement_benefits) {
+				this.user_id = user_id;
 				this.company_id = company_id;
 				this.company_detail_id = company_detail_id;
 				this.management_status = management_status;
@@ -92,6 +94,16 @@ public class CompanyDetailDTO {
 
 
 			// GetterとSetter
+			public String getUser_id() {
+				return user_id;
+			}
+
+
+			public void setUser_id(String user_id) {
+				this.user_id = user_id;
+			}
+			
+
 			public int getCompany_id() {
 				return company_id;
 			}
