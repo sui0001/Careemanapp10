@@ -32,11 +32,12 @@
             <%-- 企業登録画面へ遷移するボタン --%>
             <p><button class="registerCompanyButton" onclick="location.href='/Careemanapp10/RegisterCompany'">企業登録</button></p>
         </div>
-
+		<div class="companyInfoBlock">
             <%-- 企業リストを表示する --%>
             <% if(requestCompanyList == null || requestCompanyList.size() == 0) { %>
                     <p>登録されている企業はありません。</p>
             <% }else{ %>
+            <div class="overflowTableBlock">
                 <table class="companyListTable">
                     <tr>
                         <th>企業名</th>
@@ -44,13 +45,8 @@
                         <th>選考状況</th>
                         <th>日程</th>
                         <th>タスク内容</th>
-                        <th>選考フロー</th>
-                        <%-- <th>HPリンク</th> --%>
-                        <%-- <th>口コミリンク</th> --%>
-                        <%-- <th>志望動機</th> --%>
-                        <%-- <th>良い点</th> --%>
-                        <%-- <th>懸念点</th> --%>
                         <th>確認事項</th>
+                        <th>選考フロー</th>
                     </tr>
 
                     <% for (CompanyDTO company : requestCompanyList) { %>
@@ -61,18 +57,14 @@
                             <td class="tdCenter"><%= company.getSelection_status() %></td>
                             <td class="tdCenter"><%= company.getSelection_date() %></td>
                             <td class="tdPaddingWide"><%= company.getSelection_task() %></td>
-                            <td class="tdPaddingWide"><%= company.getSelection_flow() %></td>
-                            <%-- <td><%= company.getLink_hp() %></td> --%>
-                            <%-- <td><%= company.getLink_review() %></td> --%>
-                            <%-- <td><%= company.getSelection_motivation() %></td> --%>
-                            <%-- <td><%= company.getPositive_points() %></td> --%>
-                            <%-- <td><%= company.getNegative_points() %></td> --%>
                             <td class="tdWide"><%= company.getPoints_to_confirm() %></td>
+                            <td class="tdPaddingWide"><%= company.getSelection_flow() %></td>
                         </tr>
                     <% } %>
                 </table>
+            </div>
             <% } %>
-        
+        </div>
     </div>
 
 	<%-- footer --%>

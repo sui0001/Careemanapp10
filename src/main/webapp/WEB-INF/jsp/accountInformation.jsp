@@ -64,7 +64,7 @@
                         <% if(requestAccount.getLink_resume() == null){ %>
                             履歴書は未登録です。
                         <% }else{ %>
-                            <%= requestAccount.getLink_resume() %>
+                            <a href="<%= requestAccount.getLink_resume() %>"><%= requestAccount.getLink_resume() %> </a>
                         <% } %>
                     </td>
                 </tr>
@@ -74,7 +74,7 @@
                         <% if(requestAccount.getLink_work_history() == null){ %>
                             職務経歴書は未登録です。
                         <% }else{ %>
-                            <%= requestAccount.getLink_work_history() %>
+                            <a href="<%= requestAccount.getLink_work_history() %>"><%= requestAccount.getLink_work_history() %> </a>
                         <% } %>
                     </td>
                 </tr>

@@ -232,7 +232,7 @@ a:hover{
     
     /* ----companyList---- */
     .companyListTable{
-        margin-top: 50px;
+        margin-top: 15px;
         margin-bottom: 20px;
         border-bottom: solid 2px #c0c1c1;
     }
@@ -287,6 +287,9 @@ a:hover{
     .companyInfo{
         display: flex;
     }
+    .companyTable1 td{
+        white-space: pre-wrap;
+    }
     .companyTable2{
         margin-left: 40px;
     }
@@ -297,6 +300,9 @@ a:hover{
         height: auto;
         width: 240px;
         color: #507381;
+    }
+    .interviewTable td{
+        white-space: pre;
     }
     /* ----company:detail---- */
     .detailTable1Block{
@@ -377,7 +383,7 @@ a:hover{
     }
     .mainActionButton{
         /* レイアウト */
-        margin: 0 15px;
+        margin: 30px 15px 0;
         padding: 18px 65px;
         /* 配色・文字の大きさなど */
         background-color: #75aabfa9;
